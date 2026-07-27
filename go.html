@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>소곤사주로 이동 중</title>
+<meta name="robots" content="noindex">
+<script>
+  // 링크 허브: go.html?c=<채널또는게시물ID> → Play 스토어 (UTM 귀속)
+  var params = new URLSearchParams(location.search);
+  var content = (params.get('c') || 'direct').replace(/[^\w-]/g, '').slice(0, 40);
+  var source = (params.get('s') || 'brand_web').replace(/[^\w-]/g, '').slice(0, 30);
+  var target = 'https://play.google.com/store/apps/details?id=com.sogonsaju.app'
+    + '&utm_source=' + source
+    + '&utm_medium=web'
+    + '&utm_campaign=always_on'
+    + '&utm_content=' + content;
+  location.replace(target);
+</script>
+</head>
+<body style="font-family:sans-serif;background:#171240;color:#F5EBDD;display:flex;align-items:center;justify-content:center;height:100vh;margin:0">
+  <p>소곤사주 다운로드 페이지로 이동 중입니다…</p>
+</body>
+</html>
