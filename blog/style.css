@@ -1,0 +1,30 @@
+:root { --navy:#0E1329; --deep:#171240; --purple:#34205C; --cream:#F5EBDD; --gold:#D8B568; --soft:#B9B2CC; --card:#1D1836; }
+* { box-sizing:border-box; margin:0; }
+body { font-family:"Pretendard","Malgun Gothic",sans-serif; color:var(--cream); line-height:1.85;
+  background:linear-gradient(180deg,var(--navy) 0%,var(--deep) 60%,var(--purple) 160%); min-height:100vh; }
+a { color:inherit; }
+.wrap { max-width:680px; margin:0 auto; padding:0 20px 80px; }
+header { padding:20px 0 10px; }
+header .wrap { display:flex; justify-content:space-between; align-items:center; padding-bottom:0; }
+.brand { font-weight:800; font-size:17px; text-decoration:none; }
+.brand small { display:block; font-size:10px; color:var(--soft); letter-spacing:.12em; font-weight:500; }
+.top-cta { font-size:13px; border:1.5px solid rgba(245,235,221,.3); border-radius:99px; padding:7px 16px; text-decoration:none; }
+.kicker { color:var(--gold); font-weight:700; font-size:12.5px; letter-spacing:.12em; margin:34px 0 8px; }
+h1 { font-size:clamp(23px,4vw,30px); font-weight:800; line-height:1.4; word-break:keep-all; }
+.date { color:var(--soft); font-size:13px; margin-top:10px; }
+article p { margin:18px 0; font-size:16px; word-break:keep-all; color:#E9E2F2; }
+article img { width:100%; max-width:420px; display:block; margin:26px auto; border-radius:16px;
+  border:1px solid rgba(216,181,104,.18); box-shadow:0 16px 44px rgba(0,0,0,.45); }
+.cta-box { background:var(--card); border:1px solid rgba(216,181,104,.22); border-radius:16px;
+  padding:22px 24px; margin:34px 0 10px; }
+.cta-box p { margin:0 0 14px; font-size:14.5px; color:var(--soft); }
+.btn-gold { display:inline-block; background:linear-gradient(135deg,#E7C87E,#C9A24F); color:#241A0C;
+  font-weight:700; border-radius:99px; padding:12px 24px; text-decoration:none; font-size:15px; }
+.post-list { display:grid; gap:14px; margin-top:26px; }
+.post-card { background:var(--card); border:1px solid rgba(216,181,104,.16); border-radius:16px;
+  padding:22px 24px; text-decoration:none; display:block; transition:transform .12s ease; }
+.post-card:hover { transform:translateY(-2px); }
+.post-card h2 { font-size:17px; font-weight:700; word-break:keep-all; }
+.post-card p { color:var(--soft); font-size:13.5px; margin-top:6px; word-break:keep-all; }
+.back { display:inline-block; margin-top:30px; color:var(--soft); font-size:13.5px; }
+footer { color:var(--soft); font-size:12px; margin-top:44px; border-top:1px solid rgba(245,235,221,.1); padding-top:18px; word-break:keep-all; }
