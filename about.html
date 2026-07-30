@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>회사 소개 | Sogon Studio</title>
+<meta name="description" content="Sogon Studio는 모바일 앱을 직접 개발하고 운영하는 1인 개발 스튜디오입니다. 소곤사주를 비롯한 자사 앱을 만들고, 자사 앱의 마케팅을 직접 운영합니다.">
+<style>
+  :root {
+    --navy:#0E1329; --deep:#171240; --purple:#34205C; --cream:#F5EBDD;
+    --gold:#D8B568; --soft:#C9C2D8;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:'Pretendard','Malgun Gothic',-apple-system,sans-serif;
+    background:linear-gradient(180deg,var(--navy) 0%,var(--deep) 45%,var(--purple) 130%);
+    color:var(--cream); line-height:1.75; min-height:100vh; word-break:keep-all;
+  }
+  .wrap { max-width:860px; margin:0 auto; padding:0 24px; }
+  header { padding:22px 0; border-bottom:1px solid rgba(245,235,221,.1); }
+  header .wrap { display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; }
+  .brand { font-size:20px; font-weight:800; }
+  .brand small { display:block; font-size:11px; letter-spacing:.14em; color:var(--soft); font-weight:500; }
+  nav a { color:var(--soft); text-decoration:none; font-size:14px; margin-left:16px; }
+  nav a:hover { color:var(--gold); }
+  main { padding:56px 0 40px; }
+  h1 { font-size:34px; line-height:1.35; margin-bottom:10px; }
+  .lede { color:var(--soft); font-size:17px; margin-bottom:44px; }
+  h2 { font-size:21px; margin:40px 0 14px; color:var(--gold); }
+  h3 { font-size:16px; margin:22px 0 6px; }
+  p { margin-bottom:12px; color:#E6DFF0; }
+  ul { margin:0 0 12px 20px; color:#E6DFF0; }
+  li { margin-bottom:7px; }
+  .card {
+    background:rgba(13,12,30,.5); border:1px solid rgba(216,181,104,.16);
+    border-radius:16px; padding:22px 24px; margin:16px 0;
+  }
+  .en { color:var(--soft); font-size:14px; }
+  .en h2 { font-size:18px; }
+  table { width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:15px; }
+  th, td { text-align:left; padding:9px 8px; border-bottom:1px solid rgba(245,235,221,.1); }
+  th { color:var(--soft); font-weight:600; width:34%; }
+  a.link { color:var(--gold); }
+  footer { padding:30px 0 46px; border-top:1px solid rgba(245,235,221,.1); color:var(--soft); font-size:13px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Sogon Studio<small>소곤 스튜디오</small></div>
+    <nav>
+      <a href="index.html">소곤사주</a>
+      <a href="blog/index.html">읽을거리</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Sogon Studio</h1>
+    <p class="lede">모바일 앱을 직접 만들고 직접 운영하는 1인 개발 스튜디오입니다. 외주나 대행을 하지 않고, 자사 앱만 개발하고 자사 앱의 마케팅만 운영합니다.</p>
+
+    <h2>하는 일</h2>
+    <p>안드로이드와 iOS 앱을 기획, 개발, 출시, 운영합니다. 개발부터 스토어 등록정보 관리, 광고 집행, 사용자 응대까지 전부 자체적으로 처리합니다.</p>
+
+    <h2>만든 앱</h2>
+
+    <div class="card">
+      <h3>소곤사주</h3>
+      <p>내 사주를 근거로 지금의 고민에 답하는 상담 앱입니다. 생년월일시로 사주를 계산하고, 그 계산에 근거해 질문에 답합니다. 답변에는 사주표, 오행 균형, 십성, 대운 중 무엇을 보고 그렇게 말했는지 근거가 함께 붙습니다. 두 사람의 사주를 나란히 보는 궁합 상담과 매일 아침의 짧은 오늘의 운세도 제공합니다.</p>
+      <p>회원가입과 로그인이 없으며, 이름과 생년월일, 상담 내용은 사용자 기기에만 저장됩니다. 2026년 7월 Google Play에 정식 출시했고 App Store 출시를 준비 중입니다.</p>
+      <p><a class="link" href="https://play.google.com/store/apps/details?id=com.sogonsaju.app">Google Play에서 보기</a></p>
+    </div>
+
+    <div class="card">
+      <h3>소곤작명</h3>
+      <p>이름 짓기를 돕는 앱입니다. 개발 중입니다.</p>
+    </div>
+
+    <h2>마케팅 운영 방식</h2>
+    <p>자사 앱의 마케팅을 직접 운영합니다. Google Play 스토어 등록정보와 검색 키워드 순위를 매일 측정하고, Google Ads 앱 설치 캠페인을 운영하며, 광고 실적과 게재위치별 성과를 내부 대시보드에서 관리합니다.</p>
+    <p>내부 대시보드는 Google Play Developer API와 Google Ads API로 자사 계정의 데이터를 읽어 표시합니다. 예산 변경이나 게재위치 제외 같은 변경 작업은 담당자가 대시보드에서 승인한 뒤에만 반영됩니다. 이 도구는 자사 내부에서만 사용하며 외부에 판매하거나 제공하지 않습니다.</p>
+
+    <h2>회사 정보</h2>
+    <table>
+      <tr><th>상호</th><td>Sogon Studio</td></tr>
+      <tr><th>사업 형태</th><td>1인 개발 스튜디오 (모바일 앱 개발 및 공급업)</td></tr>
+      <tr><th>Google Play 개발자명</th><td>Sogon Studio</td></tr>
+      <tr><th>문의</th><td><a class="link" href="mailto:gudwnzm@gmail.com">gudwnzm@gmail.com</a></td></tr>
+    </table>
+
+    <div class="en">
+      <h2>About Sogon Studio (English)</h2>
+      <p>Sogon Studio is a one person mobile app development studio based in South Korea. We build, publish, and operate our own applications. We do not provide outsourcing or agency services, and we do not manage advertising accounts for any other business.</p>
+
+      <h3>Our product</h3>
+      <p>Sogon Saju (package name com.sogonsaju.app) is a consultation app based on Korean traditional Saju. A user enters a birth date and time, the app computes the four pillars, and answers the user's question based on that computation. Every answer is shown together with the evidence it was derived from. The app also offers a compatibility reading for two people and a short daily message. There is no sign up or login, and personal data is stored on the user's device. It launched on Google Play in July 2026 and an App Store release is in preparation.</p>
+
+      <h3>How we run marketing</h3>
+      <p>We manage the marketing of our own apps ourselves. We track our Google Play store listing and keyword search rankings daily, run a Google Ads app install campaign for our own app, and review campaign, placement, and asset performance in an internal dashboard.</p>
+      <p>The internal dashboard reads data for our own accounts through the Google Play Developer API and the Google Ads API. Any write operation, such as changing a budget or excluding a placement, is applied only after the account owner approves it in the dashboard. The tool is used internally by the account owner only. It is not sold, distributed, or offered to any third party, and we do not handle advertising data for any other advertiser.</p>
+
+      <h3>Contact</h3>
+      <p>gudwnzm@gmail.com</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 Sogon Studio, 문의 gudwnzm@gmail.com
+  </div>
+</footer>
+
+</body>
+</html>
