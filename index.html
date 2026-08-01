@@ -71,8 +71,9 @@
   .app-card { background:rgba(10,8,6,.5); border:1px solid var(--line); border-radius:22px;
     overflow:hidden; display:flex; flex-direction:column; transition:transform .15s ease, border-color .15s ease; }
   .app-card:hover { transform:translateY(-3px); border-color:rgba(216,181,104,.45); }
-  .app-card .thumb { position:relative; aspect-ratio:16/11; overflow:hidden; }
-  .app-card .thumb img { width:100%; height:100%; object-fit:cover; object-position:center 18%; display:block; }
+  .app-card .thumb { position:relative; aspect-ratio:4/3; overflow:hidden; }
+  .app-card .thumb img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+  .app-card .thumb img.pos-top { object-position:center 18%; }
   .app-card .thumb::after { content:""; position:absolute; inset:0;
     background:linear-gradient(180deg, transparent 55%, rgba(10,8,6,.85) 100%); }
   .app-card .badge { position:absolute; top:14px; left:14px; z-index:2; font-size:12px; font-weight:800;
@@ -159,7 +160,7 @@
         <div class="app-card">
           <div class="thumb">
             <span class="badge badge-live">출시됨</span>
-            <img src="assets/sogoni.jpg" alt="달을 든 소곤이, 소곤사주의 상담자" loading="eager">
+            <img class="pos-top" src="assets/sogoni.jpg" alt="달을 든 소곤이, 소곤사주의 상담자" loading="eager">
           </div>
           <div class="body">
             <h3>소곤사주<small>사주 상담</small></h3>
@@ -176,8 +177,8 @@
             <img src="assets/jakmyeong-grandfather.jpg" alt="이름을 짓는 할아버지, 소곤작명의 상담자" loading="lazy">
           </div>
           <div class="body">
-            <h3>소곤작명<small>이름 짓기</small></h3>
-            <p>사주를 근거로 이름을 짓는 앱. 아기 이름부터 개명, 예명까지, 오행을 보완하는 이름을 추천하고 왜 이 이름인지 방법별 근거를 함께 보여드립니다.</p>
+            <h3>소곤작명<small>이름 짓기, 이름 풀이</small></h3>
+            <p>사주를 근거로 이름을 짓고, 지금 이름을 풀이하는 앱. 아기 이름부터 개명, 예명까지, 오행을 보완하는 이름을 추천하고 왜 이 이름인지 방법별 근거를 함께 보여드립니다.</p>
           </div>
         </div>
         <div class="app-card">
@@ -196,8 +197,8 @@
             <img src="assets/haemong-father.jpg" alt="꿈을 풀어주는 선생님, 소곤해몽의 상담자" loading="lazy">
           </div>
           <div class="body">
-            <h3>소곤해몽<small>꿈풀이</small></h3>
-            <p>상징 하나로 단정하지 않는 꿈풀이 앱. 기억나는 꿈을 함께 정리해 확인한 다음, 문화적 상징과 개인의 맥락을 구분해서 근거가 보이는 해몽을 들려드립니다.</p>
+            <h3>소곤해몽<small>해몽, 명리해몽</small></h3>
+            <p>상징 하나로 단정하지 않는 꿈풀이 앱. 기억나는 꿈을 함께 정리해 확인한 다음 근거가 보이는 해몽을 들려드립니다. 꿈만 보는 해몽과, 내 사주까지 함께 보는 명리해몽 두 방식으로요.</p>
           </div>
         </div>
       </div>
@@ -210,22 +211,22 @@
       <h2>고민에서 시작하세요</h2>
       <p class="sub">지금은 소곤사주가 듣고 있습니다. 정해진 운세 문구가 아니라, 그 고민에 대한 답을요.</p>
       <div class="cards">
-        <a class="card" href="sogonsaju.html">
+        <a class="card" href="sogonsaju.html#gomin">
           <h3>다시 연락해도 될까요</h3>
           <p>재회가 고민될 때, 내 사주는 뭐라고 할까요.</p>
           <span class="go">소곤사주에서 물어보기 →</span>
         </a>
-        <a class="card" href="sogonsaju.html">
+        <a class="card" href="sogonsaju.html#gomin">
           <h3>지금 회사, 계속 다녀도 될까요</h3>
           <p>이직과 직장 고민을 사주 흐름으로 정리해요.</p>
           <span class="go">소곤사주에서 물어보기 →</span>
         </a>
-        <a class="card" href="sogonsaju.html">
+        <a class="card" href="sogonsaju.html#gunghap">
           <h3>우리는 잘 맞을까요</h3>
           <p>두 사람의 사주를 나란히 놓고 궁합을 봅니다.</p>
           <span class="go">궁합 보러 가기 →</span>
         </a>
-        <a class="card" href="sogonsaju.html">
+        <a class="card" href="sogonsaju.html#jjokji">
           <h3>오늘은 어떤 날일까요</h3>
           <p>매일 아침 소곤이의 쪽지로 오늘의 운세를요.</p>
           <span class="go">쪽지 받으러 가기 →</span>
