@@ -16,11 +16,12 @@ https://play.google.com/store/apps/details?id=com.sogonsaju.app
 ## 구성
 
 ```
-index.html    소곤사주 소개
-about.html    회사 소개 (한국어, 영어)
-blog/         사주 관련 읽을거리
-go.html       스토어 이동 (유입 경로 추적용)
-sitemap.xml   검색 엔진용 사이트맵
+index.html      Sogon Studio 브랜드 허브 (앱 패밀리, 리뷰, 고민별 진입)
+sogonsaju.html  소곤사주 소개
+about.html      회사 소개 (한국어, 영어)
+blog/           사주 관련 읽을거리
+go.html         스토어 이동 (유입 경로 추적용)
+sitemap.xml     검색 엔진용 사이트맵
 ```
 
 정적 사이트이며 GitHub Pages로 배포됩니다. 빌드 과정은 없습니다.

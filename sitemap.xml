@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://dnrwo1088.github.io/sogon-web/sogonsaju.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://dnrwo1088.github.io/sogon-web/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
