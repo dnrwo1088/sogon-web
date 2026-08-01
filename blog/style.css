@@ -1,4 +1,4 @@
-:root { --navy:#0E1329; --deep:#171240; --purple:#34205C; --cream:#F5EBDD; --gold:#D8B568; --soft:#B9B2CC; --card:#1D1836; }
+:root { --navy:#151110; --deep:#1E1712; --purple:#2B2015; --cream:#F5EBDD; --gold:#D8B568; --soft:#CDC2B2; --card:#241C13; }
 * { box-sizing:border-box; margin:0; }
 body { font-family:"Pretendard","Malgun Gothic",sans-serif; color:var(--cream); line-height:1.85;
   background:linear-gradient(180deg,var(--navy) 0%,var(--deep) 60%,var(--purple) 160%); min-height:100vh; }
@@ -12,7 +12,7 @@ header .wrap { display:flex; justify-content:space-between; align-items:center; 
 .kicker { color:var(--gold); font-weight:700; font-size:12.5px; letter-spacing:.12em; margin:34px 0 8px; }
 h1 { font-size:clamp(23px,4vw,30px); font-weight:800; line-height:1.4; word-break:keep-all; }
 .date { color:var(--soft); font-size:13px; margin-top:10px; }
-article p { margin:18px 0; font-size:16px; word-break:keep-all; color:#E9E2F2; }
+article p { margin:18px 0; font-size:16px; word-break:keep-all; color:#EDE4D3; }
 article img { width:100%; max-width:420px; display:block; margin:26px auto; border-radius:16px;
   border:1px solid rgba(216,181,104,.18); box-shadow:0 16px 44px rgba(0,0,0,.45); }
 .cta-box { background:var(--card); border:1px solid rgba(216,181,104,.22); border-radius:16px;
