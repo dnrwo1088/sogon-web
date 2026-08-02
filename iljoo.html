@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>무료 일주 계산기 - 내 일주 바로 알아보기 | Sogon Studio</title>
+<meta name="description" content="생년월일만 넣으면 내 일주를 바로 알려드립니다. 일간과 일지, 오행까지. 회원가입 없는 무료 일주 계산기, 소곤 시리즈.">
+<meta property="og:title" content="무료 일주 계산기 - 내 일주 바로 알아보기">
+<meta property="og:description" content="사주팔자 여덟 글자 중 나를 가장 닮은 두 글자, 일주. 생년월일만 넣으면 바로 알려드려요.">
+<meta property="og:image" content="https://sogonstudio.com/assets/og-hero.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sogonstudio.com/iljoo.html">
+<link rel="canonical" href="https://sogonstudio.com/iljoo.html">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root {
+    --ink:#151110; --ink2:#1E1712; --warm:#2B2015;
+    --cream:#F5EBDD; --gold:#D8B568; --soft:#CDC2B2;
+    --line:rgba(216,181,104,.18);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:'Pretendard','Malgun Gothic',-apple-system,sans-serif;
+    background:linear-gradient(180deg,var(--ink) 0%,var(--ink2) 50%,var(--warm) 135%);
+    color:var(--cream); line-height:1.75; min-height:100vh; word-break:keep-all;
+  }
+  .wrap { max-width:680px; margin:0 auto; padding:0 22px 70px; }
+  header { padding:20px 0; border-bottom:1px solid rgba(245,235,221,.08); }
+  header .inner { max-width:680px; margin:0 auto; padding:0 22px; display:flex; justify-content:space-between; align-items:center; }
+  .brand { font-size:19px; font-weight:800; text-decoration:none; color:var(--cream); }
+  .brand small { display:block; font-size:10px; letter-spacing:.16em; color:var(--soft); font-weight:500; }
+  .top-cta { font-size:13px; border:1.5px solid rgba(216,181,104,.5); border-radius:99px; padding:8px 16px; text-decoration:none; color:var(--cream); }
+
+  .kicker { font-size:12px; letter-spacing:.22em; color:var(--gold); font-weight:700; margin:40px 0 10px; }
+  h1 { font-size:31px; line-height:1.35; }
+  .lede { color:var(--soft); font-size:15.5px; margin-top:12px; }
+
+  .tool { background:rgba(10,8,6,.5); border:1px solid var(--line); border-radius:20px; padding:28px 26px; margin-top:28px; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; }
+  select {
+    flex:1; min-width:90px; background:#221B13; color:var(--cream); font-family:inherit; font-size:16px;
+    border:1px solid rgba(245,235,221,.2); border-radius:12px; padding:12px 14px; appearance:auto;
+  }
+  button.go {
+    width:100%; margin-top:14px; background:linear-gradient(135deg,#E7C87E,#C9A24F); color:#241A0C;
+    font-family:inherit; font-weight:800; font-size:17px; border:0; border-radius:99px; padding:15px; cursor:pointer;
+  }
+  button.go:hover { transform:translateY(-1px); }
+
+  .result { display:none; margin-top:26px; }
+  .pillar { text-align:center; padding:26px 0 18px; }
+  .hanja { font-size:56px; font-weight:800; color:var(--gold); letter-spacing:.1em; }
+  .hangul { font-size:22px; font-weight:700; margin-top:6px; }
+  .elem { color:var(--soft); font-size:14px; margin-top:6px; }
+  .desc { background:rgba(10,8,6,.45); border:1px solid rgba(245,235,221,.1); border-radius:14px; padding:20px 22px; margin-top:14px; font-size:15px; color:#EDE4D3; }
+  .desc b { color:var(--gold); }
+  .note { color:var(--soft); font-size:13px; margin-top:16px; }
+
+  .cta-box { background:rgba(10,8,6,.5); border:1px solid rgba(216,181,104,.25); border-radius:16px; padding:22px 24px; margin-top:26px; }
+  .cta-box p { font-size:14.5px; color:var(--soft); margin-bottom:14px; }
+  .btn-gold { display:inline-block; background:linear-gradient(135deg,#E7C87E,#C9A24F); color:#241A0C;
+    font-weight:700; border-radius:99px; padding:12px 24px; text-decoration:none; font-size:15px; }
+  a.more { color:var(--gold); font-size:14px; }
+  footer { color:var(--soft); font-size:12px; margin-top:46px; border-top:1px solid rgba(245,235,221,.1); padding-top:18px; }
+</style>
+</head>
+<body>
+<header><div class="inner">
+  <a class="brand" href="index.html">Sogon Studio<small>소곤 시리즈</small></a>
+  <a class="top-cta" href="go.html?c=tool-iljoo-top">앱 다운로드</a>
+</div></header>
+<main class="wrap">
+  <p class="kicker">무료 도구</p>
+  <h1>일주 계산기</h1>
+  <p class="lede">사주팔자 여덟 글자 중 나를 가장 닮은 두 글자가 일주예요. 생년월일만 넣으면 바로 알려드립니다. 입력한 정보는 어디에도 저장되지 않아요.</p>
+
+  <div class="tool">
+    <div class="row">
+      <select id="y" aria-label="출생 연도"></select>
+      <select id="m" aria-label="출생 월"></select>
+      <select id="d" aria-label="출생 일"></select>
+    </div>
+    <button class="go" id="calc">내 일주 보기</button>
+
+    <div class="result" id="result">
+      <div class="pillar">
+        <div class="hanja" id="rHanja"></div>
+        <div class="hangul" id="rHangul"></div>
+        <div class="elem" id="rElem"></div>
+      </div>
+      <div class="desc" id="rStem"></div>
+      <div class="desc" id="rBranch"></div>
+      <p class="note">양력 기준입니다. 밤 11시 이후에 태어난 분은 전통적으로 다음 날 일주로 보기도 해요. 일주는 사주 여덟 글자 중 두 글자로, 전체 풀이는 나머지 여섯 글자와 함께 볼 때 완성됩니다.</p>
+    </div>
+  </div>
+
+  <div class="cta-box" id="cta" style="display:none">
+    <p>내 일주가 나머지 여섯 글자와 만나면 어떤 이야기가 될까요. 소곤사주는 내 사주 전체를 계산하고, 지금 고민에 대한 답을 근거와 함께 들려드려요. 회원가입 없이 무료 질문 2회.</p>
+    <a class="btn-gold" href="go.html?c=tool-iljoo">소곤사주에서 전체 사주 보기</a>
+  </div>
+
+  <p style="margin-top:24px"><a class="more" href="blog/iljoo.html">일주가 뭔지 더 알고 싶다면, 일주 이야기 읽어보기 →</a></p>
+
+  <footer>이 계산기는 양력 날짜 기준 표준 만세력 공식으로 일주를 계산합니다. 소곤 시리즈의 콘텐츠는 참고와 오락 목적입니다. © Sogon Studio</footer>
+</main>
+<script>
+  const STEMS = [
+    ['갑','甲','목','양의 나무'], ['을','乙','목','음의 나무'], ['병','丙','화','양의 불'], ['정','丁','화','음의 불'],
+    ['무','戊','토','양의 흙'], ['기','己','토','음의 흙'], ['경','庚','금','양의 쇠'], ['신','辛','금','음의 쇠'],
+    ['임','壬','수','양의 물'], ['계','癸','수','음의 물']
+  ];
+  const BRANCHES = [
+    ['자','子','쥐','물'], ['축','丑','소','흙'], ['인','寅','호랑이','나무'], ['묘','卯','토끼','나무'],
+    ['진','辰','용','흙'], ['사','巳','뱀','불'], ['오','午','말','불'], ['미','未','양','흙'],
+    ['신','申','원숭이','쇠'], ['유','酉','닭','쇠'], ['술','戌','개','흙'], ['해','亥','돼지','물']
+  ];
+  const STEM_DESC = [
+    '갑목은 곧게 자라는 큰 나무의 기운이에요. 시작하는 힘과 밀고 나가는 추진력이 돋보이고, 구부러지는 것보다 부러지는 쪽을 택하는 곧은 결이 있습니다. 방향이 정해지면 누구보다 우직하게 걸어가요.',
+    '을목은 담쟁이와 들풀처럼 유연한 나무의 기운이에요. 부드러워 보여도 바위틈에서도 길을 찾아내는 생존력과 적응력이 강점입니다. 사람 사이를 잇고 어울리는 데 재주가 있어요.',
+    '병화는 해처럼 스스로 빛을 내는 불의 기운이에요. 존재감이 크고 숨기는 게 어려운 밝은 결이라, 무대와 주도권이 있을 때 살아납니다. 주변을 환하게 만드는 힘이 있어요.',
+    '정화는 촛불과 화롯불처럼 가까이를 데우는 불의 기운이에요. 화려하게 번지기보다 곁에 있는 사람을 따뜻하게 하는 섬세함이 있습니다. 집중할 때 오래 타는 은근한 힘이 강점이에요.',
+    '무토는 산과 큰 대지의 기운이에요. 쉽게 흔들리지 않는 무게감이 있어 주변 사람들이 기대게 됩니다. 변화에 급하게 반응하기보다 지긋이 버티며 지키는 결이에요.',
+    '기토는 밭의 흙처럼 무언가를 길러내는 기운이에요. 곁의 사람과 일을 가꾸고 다듬는 데 재주가 있고, 겉보다 속이 단단합니다. 묵묵히 챙기다가 정작 자기 몫은 뒤로 미루기도 해요.',
+    '경금은 무쇠와 바위처럼 단단한 쇠의 기운이에요. 결단이 빠르고 맺고 끊는 게 분명합니다. 다듬어질수록 날카로운 도구가 되는 결이라, 시련을 겪을수록 오히려 단단해지는 편이에요.',
+    '신금은 보석과 바늘처럼 정교한 쇠의 기운이에요. 섬세하고 예리한 감각이 있어 완성도에 대한 기준이 높습니다. 겉은 차분해 보여도 속에는 또렷한 자기 기준이 있어요.',
+    '임수는 강과 바다처럼 큰 물의 기운이에요. 품이 넓고 생각의 스케일이 커서 한곳에 고이기보다 흘러가려 합니다. 지혜롭고 유연하지만, 마음속 깊은 곳은 쉽게 보여주지 않아요.',
+    '계수는 이슬비와 샘물처럼 스미는 물의 기운이에요. 조용히 스며들어 주변을 적시는 결이라 감수성과 직관이 섬세합니다. 겉은 잔잔해도 속으로는 많은 것을 느끼고 있어요.'
+  ];
+  const BRANCH_DESC = [
+    '일지 자수는 한밤의 물. 머리 회전이 빠르고 눈치가 밝은 자리예요.',
+    '일지 축토는 겨울의 언 땅. 묵묵히 견디며 쌓아가는 자리예요.',
+    '일지 인목은 이른 봄의 큰 나무. 시작과 도전의 기운이 깔린 자리예요.',
+    '일지 묘목은 봄의 새싹. 부드럽지만 끈질긴 생명력의 자리예요.',
+    '일지 진토는 봄비 머금은 땅. 품는 것이 많고 속이 깊은 자리예요.',
+    '일지 사화는 초여름의 불. 총명하고 감각이 빠른 자리예요.',
+    '일지 오화는 한낮의 불. 열정과 표현력이 살아 있는 자리예요.',
+    '일지 미토는 한여름의 마른 땅. 정이 많고 속으로 삭이는 자리예요.',
+    '일지 신금은 초가을의 쇠. 재주가 많고 손이 빠른 자리예요.',
+    '일지 유금은 가을의 보석. 꼼꼼하고 완성도를 따지는 자리예요.',
+    '일지 술토는 늦가을의 땅. 의리와 책임감이 무거운 자리예요.',
+    '일지 해수는 초겨울의 바다. 상상력이 깊고 품이 넓은 자리예요.'
+  ];
+
+  function jdn(y, m, d) {
+    const a = Math.floor((14 - m) / 12), yy = y + 4800 - a, mm = m + 12 * a - 3;
+    return d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
+  }
+
+  const ySel = document.getElementById('y'), mSel = document.getElementById('m'), dSel = document.getElementById('d');
+  const thisYear = new Date().getFullYear();
+  for (let y = thisYear; y >= 1930; y--) ySel.add(new Option(y + '년', y));
+  for (let m = 1; m <= 12; m++) mSel.add(new Option(m + '월', m));
+  function fillDays() {
+    const y = +ySel.value, m = +mSel.value, max = new Date(y, m, 0).getDate(), cur = +dSel.value || 1;
+    dSel.innerHTML = '';
+    for (let d = 1; d <= max; d++) dSel.add(new Option(d + '일', d));
+    dSel.value = Math.min(cur, max);
+  }
+  ySel.value = 1995;
+  ySel.onchange = fillDays; mSel.onchange = fillDays;
+  fillDays();
+
+  document.getElementById('calc').onclick = () => {
+    const y = +ySel.value, m = +mSel.value, d = +dSel.value;
+    const idx = ((jdn(y, m, d) + 49) % 60 + 60) % 60;
+    const s = STEMS[idx % 10], b = BRANCHES[idx % 12];
+    document.getElementById('rHanja').textContent = s[1] + b[1];
+    document.getElementById('rHangul').textContent = s[0] + b[0] + ' 일주';
+    document.getElementById('rElem').textContent = '일간 ' + s[0] + '(' + s[2] + ', ' + s[3] + ') / 일지 ' + b[0] + '(' + b[2] + ', ' + b[3] + ')';
+    document.getElementById('rStem').innerHTML = '<b>나의 중심, ' + s[0] + s[2] + '</b><br>' + STEM_DESC[idx % 10];
+    document.getElementById('rBranch').innerHTML = '<b>내가 앉은 자리, ' + b[0] + '</b><br>' + BRANCH_DESC[idx % 12];
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('cta').style.display = 'block';
+  };
+</script>
+</body>
+</html>
