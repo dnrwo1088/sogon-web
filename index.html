@@ -65,31 +65,32 @@
   .cta-row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center; }
   @media (max-width:720px){ .hero h1 { font-size:32px; } }
 
-  /* 네 상담자가 나란히 선 히어로 무대 */
-  .stage { margin-top:44px; position:relative; }
-  .stage-row { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; align-items:end; }
-  .cast { position:relative; border-radius:18px 18px 14px 14px; overflow:hidden;
-    border:1px solid rgba(216,181,104,.22); background:rgba(10,8,6,.5);
-    transition:transform .25s ease, border-color .25s ease; }
-  .cast:nth-child(1) { transform:translateY(-14px); }
-  .cast:nth-child(3) { transform:translateY(-8px); }
-  .cast:hover { transform:translateY(-22px); border-color:rgba(216,181,104,.6); }
-  .cast img { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center 12%; display:block; }
-  .cast::after { content:""; position:absolute; inset:0;
-    background:linear-gradient(180deg, transparent 42%, rgba(10,8,6,.9) 88%); pointer-events:none; }
-  .cast .who { position:absolute; left:0; right:0; bottom:12px; z-index:2; }
-  .cast .who b { display:block; font-size:15px; letter-spacing:.01em; }
-  .cast .who span { display:block; font-size:11.5px; color:var(--gold); font-weight:700; margin-top:2px; }
-  .cast .tag { position:absolute; top:10px; right:10px; z-index:2; font-size:10.5px; font-weight:800;
-    border-radius:999px; padding:3px 9px; backdrop-filter:blur(4px); }
-  .tag-live { background:rgba(216,181,104,.9); color:#241A0C; }
-  .tag-soon { background:rgba(15,12,9,.75); color:var(--soft); border:1px solid rgba(205,194,178,.3); }
-  .stage-note { margin-top:20px; color:var(--soft); font-size:13px; }
-  @media (max-width:760px){
-    .stage-row { grid-template-columns:repeat(2,1fr); gap:12px; }
-    .cast:nth-child(1), .cast:nth-child(3) { transform:none; }
-    .cast:nth-child(2) { transform:translateY(-10px); }
-    .cast:nth-child(4) { transform:translateY(-10px); }
+  /* 소곤 가족 관계도 */
+  .family { margin:46px auto 0; max-width:660px; display:flex; flex-direction:column; align-items:center; }
+  .fam-title { font-size:12px; letter-spacing:.2em; color:var(--gold); font-weight:700; margin-bottom:6px; }
+  .fam-lede { color:var(--soft); font-size:14.5px; margin-bottom:26px; }
+  .gen { display:flex; align-items:flex-start; justify-content:center; }
+  .node { display:flex; flex-direction:column; align-items:center; width:118px;
+    text-decoration:none; color:var(--cream); transition:transform .2s ease; }
+  .node:hover { transform:translateY(-4px); }
+  .node .ring { width:74px; height:74px; border-radius:50%; padding:2px;
+    background:linear-gradient(140deg, rgba(216,181,104,.7), rgba(216,181,104,.15)); }
+  .node img { width:100%; height:100%; border-radius:50%; object-fit:cover; object-position:center 14%; display:block; }
+  .node b { font-size:14px; margin-top:9px; letter-spacing:-.01em; }
+  .node .role { font-size:11px; color:var(--gold); font-weight:700; margin-top:2px; }
+  .node .rel { font-size:11px; color:var(--soft); margin-top:3px; opacity:.9; }
+  .node.center .ring { width:86px; height:86px;
+    background:linear-gradient(140deg, rgba(216,181,104,1), rgba(216,181,104,.3)); }
+  .node.center b { font-size:15px; }
+  .vline { width:1px; height:26px; background:linear-gradient(180deg, rgba(216,181,104,.5), rgba(216,181,104,.18)); }
+  .couple { display:flex; align-items:center; justify-content:center; }
+  .hline { width:54px; height:1px; background:rgba(216,181,104,.35); margin-bottom:42px; }
+  .fam-note { margin-top:24px; color:var(--soft); font-size:13px; max-width:520px; }
+  @media (max-width:640px){
+    .node { width:96px; }
+    .node .ring { width:62px; height:62px; }
+    .node.center .ring { width:72px; height:72px; }
+    .hline { width:26px; margin-bottom:40px; }
   }
 
   section { padding:56px 0; }
@@ -226,30 +227,45 @@
         <a class="btn btn-line" href="go.html?c=hub-hero">소곤사주 받기</a>
       </div>
 
-      <div class="stage">
-        <div class="stage-row">
-          <a class="cast" href="sogonsaju.html">
-            <span class="tag tag-live">출시됨</span>
-            <img src="assets/hp-saju.jpg" alt="달을 든 소곤이, 소곤사주의 상담자" loading="eager">
-            <div class="who"><b>소곤이</b><span>사주 상담</span></div>
+      <div class="family">
+        <p class="fam-title">한 가족의 네 가지 이야기</p>
+        <p class="fam-lede">소곤 시리즈의 상담자들은 한 집안 사람입니다. 각자 다른 방식으로 마음을 들어요.</p>
+
+        <a class="node" href="sogonjakmyeong.html">
+          <div class="ring"><img src="assets/hp-jakmyeong.jpg" alt="소곤작명의 작명가" loading="eager"></div>
+          <b>작명가</b>
+          <span class="role">소곤작명</span>
+          <span class="rel">소곤이의 할아버지</span>
+        </a>
+
+        <div class="vline"></div>
+
+        <div class="couple">
+          <a class="node" href="sogonhaemong.html">
+            <div class="ring"><img src="assets/hp-haemong.jpg" alt="소곤해몽의 소곤이 아버지" loading="eager"></div>
+            <b>소곤이 아버지</b>
+            <span class="role">소곤해몽</span>
+            <span class="rel">꿈을 듣는 사람</span>
           </a>
-          <a class="cast" href="sogonjakmyeong.html">
-            <span class="tag tag-soon">준비 중</span>
-            <img src="assets/hp-jakmyeong.jpg" alt="작명서를 든 소곤작명의 작명가" loading="eager">
-            <div class="who"><b>작명가</b><span>이름 짓기</span></div>
-          </a>
-          <a class="cast" href="sogonsinjeom.html">
-            <span class="tag tag-soon">준비 중</span>
-            <img src="assets/hp-sinjeom.jpg" alt="신당의 무녀, 소곤신점의 상담자" loading="eager">
-            <div class="who"><b>무녀</b><span>오방기 신점</span></div>
-          </a>
-          <a class="cast" href="sogonhaemong.html">
-            <span class="tag tag-soon">준비 중</span>
-            <img src="assets/hp-haemong.jpg" alt="소곤이 아버지, 소곤해몽의 안내자" loading="eager">
-            <div class="who"><b>소곤이 아버지</b><span>꿈풀이</span></div>
+          <div class="hline"></div>
+          <a class="node" href="sogonsinjeom.html">
+            <div class="ring"><img src="assets/hp-sinjeom.jpg" alt="소곤신점의 무녀" loading="eager"></div>
+            <b>무녀</b>
+            <span class="role">소곤신점</span>
+            <span class="rel">소곤이의 어머니</span>
           </a>
         </div>
-        <p class="stage-note">넷 다 같은 약속을 지킵니다. 같은 입력이면 같은 답, 그리고 왜 그런 답인지 근거를 보여드린다는 것.</p>
+
+        <div class="vline"></div>
+
+        <a class="node center" href="sogonsaju.html">
+          <div class="ring"><img src="assets/hp-saju.jpg" alt="소곤사주의 소곤이" loading="eager"></div>
+          <b>소곤이</b>
+          <span class="role">소곤사주</span>
+          <span class="rel">달빛 상담방의 주인</span>
+        </a>
+
+        <p class="fam-note">넷 다 같은 약속을 지킵니다. 같은 입력이면 같은 답, 그리고 왜 그런 답인지 근거를 보여드린다는 것.</p>
       </div>
     </div>
   </div>
