@@ -66,6 +66,20 @@
   footer { padding:34px 0 46px; border-top:1px solid rgba(245,235,221,.08); color:var(--soft); font-size:13px; }
   footer .wrap { display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; }
   footer a { color:var(--soft); }
+  .modal-bg { display:none; position:fixed; inset:0; background:rgba(8,6,4,.78); z-index:50;
+    align-items:center; justify-content:center; padding:24px; }
+  .modal-bg.on { display:flex; }
+  .modal { background:linear-gradient(180deg,#241C13,#1A140E); border:1px solid rgba(216,181,104,.4);
+    border-radius:20px; padding:34px 30px; max-width:430px; text-align:center;
+    box-shadow:0 30px 90px rgba(0,0,0,.6); }
+  .modal .m-badge { display:inline-block; background:rgba(216,181,104,.15); color:var(--gold);
+    border:1px solid rgba(216,181,104,.4); font-size:12px; font-weight:800; border-radius:999px;
+    padding:4px 13px; margin-bottom:14px; }
+  .modal h3 { font-size:21px; margin-bottom:10px; }
+  .modal p { color:var(--soft); font-size:14.5px; margin-bottom:22px; }
+  .modal .m-row { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .modal .btn { padding:11px 22px; font-size:14px; cursor:pointer; }
+  .modal button.btn { font-family:inherit; background:none; }
 </style>
 </head>
 <body>
@@ -135,9 +149,9 @@
   <section class="final">
     <div class="wrap">
       <h2>출시 소식은 이곳에서 전해 드릴게요</h2>
-      <p class="sub">그때까지, 내 사주부터 알아보셔도 좋습니다.</p>
+      <p class="sub">버튼은 미리 만들어 뒀어요. 출시되면 바로 열립니다.</p>
       <div class="cta-row">
-        <a class="btn btn-gold" href="go.html?c=sinjeom-page">소곤사주 써보기</a>
+        <a class="btn btn-gold" href="#" id="tryApp">소곤신점 써보기</a>
         <a class="btn btn-line" href="gunghap.html">무료 궁합 미리보기</a>
       </div>
     </div>
@@ -149,5 +163,22 @@
     <div><a href="index.html">홈</a> / <a href="about.html">회사 소개</a></div>
   </div>
 </footer>
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <span class="m-badge">준비 중</span>
+    <h3>소곤신점 써보기</h3>
+    <p>신당은 아직 문을 여는 중이에요. 출시되면 이 버튼으로 바로 들어오실 수 있어요. 기다리는 동안 소곤사주에서 내 사주를 먼저 알아보셔도 좋아요.</p>
+    <div class="m-row">
+      <a class="btn btn-gold" href="go.html?c=sinjeom-modal">소곤사주 먼저 써보기</a>
+      <button class="btn btn-line" id="modalClose">닫기</button>
+    </div>
+  </div>
+</div>
+<script>
+  const bg = document.getElementById('modalBg');
+  document.getElementById('tryApp').onclick = (e) => { e.preventDefault(); bg.classList.add('on'); };
+  document.getElementById('modalClose').onclick = () => bg.classList.remove('on');
+  bg.onclick = (e) => { if (e.target === bg) bg.classList.remove('on'); };
+</script>
 </body>
 </html>
