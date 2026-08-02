@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
-<title>소곤작명 - 사주를 근거로 이름을 짓는 앱 (준비 중)</title>
-<meta name="description" content="아기 이름부터 개명, 예명까지. 오행을 보완하는 이름을 추천하고 왜 이 이름인지 방법별 근거를 보여주는 작명 앱, 소곤작명. 출시 준비 중입니다.">
-<meta property="og:title" content="소곤작명 - 왜 이 이름인지, 근거를 보여드려요">
-<meta property="og:description" content="사주를 근거로 이름을 짓고 지금 이름을 풀이하는 앱. 소곤 시리즈의 두 번째 이야기, 준비 중입니다.">
+<title>소곤작명 - 왜 그 이름인지 근거까지 적어 드리는 작명 앱 (준비 중)</title>
+<meta name="description" content="사주 여덟 글자를 읽고, 왜 그 이름인지 근거까지 적어 드리는 작명 앱. 아기 이름과 예명을 짓고, 지금 이름은 무료로 풀이합니다. 출시 준비 중.">
+<meta property="og:title" content="소곤작명 - 왜 그 이름인지, 근거까지 적어 드려요">
+<meta property="og:description" content="사주 여덟 글자를 읽고 근거와 함께 이름을 추천하는 작명 앱. 이름 풀이는 무료. 출시 준비 중입니다.">
 <meta property="og:image" content="https://sogonstudio.com/assets/jakmyeong-grandfather.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sogonstudio.com/sogonjakmyeong.html">
@@ -36,11 +36,13 @@
   .sub { color:var(--soft); font-size:16px; }
   .badge-soon { display:inline-block; background:rgba(20,16,12,.72); color:var(--soft); border:1px solid rgba(205,194,178,.35);
     font-size:12.5px; font-weight:800; border-radius:999px; padding:5px 14px; margin-bottom:16px; }
+  .free-chip { display:inline-block; background:rgba(216,181,104,.15); color:var(--gold); border:1px solid rgba(216,181,104,.4);
+    font-size:12px; font-weight:800; border-radius:999px; padding:3px 11px; vertical-align:middle; margin-left:6px; }
   .hero { padding:64px 0 54px; }
   .hero .wrap { display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center; }
   .hero h1 { font-size:40px; line-height:1.32; margin-bottom:16px; }
   .hero h1 em { font-style:normal; color:var(--gold); }
-  .lede { color:var(--soft); font-size:17px; margin-bottom:24px; max-width:500px; }
+  .lede { color:var(--soft); font-size:17px; margin-bottom:24px; max-width:520px; }
   .char { width:100%; max-width:400px; border-radius:22px; display:block; margin:0 auto;
     border:1px solid rgba(216,181,104,.25); box-shadow:0 26px 70px rgba(0,0,0,.5); }
   @media (max-width:860px){ .hero .wrap { grid-template-columns:1fr; } .hero h1 { font-size:31px; } }
@@ -55,12 +57,15 @@
     border:1px solid rgba(216,181,104,.28); box-shadow:0 30px 80px rgba(0,0,0,.55); }
   .caption { text-align:center; color:var(--soft); font-size:12.5px; margin-top:10px; }
   .band { background:rgba(10,8,6,.35); border-top:1px solid rgba(245,235,221,.07); border-bottom:1px solid rgba(245,235,221,.07); }
+  .quote { border-left:3px solid var(--gold); background:rgba(10,8,6,.45); border-radius:0 14px 14px 0;
+    padding:16px 20px; margin-top:18px; color:#EDE4D3; font-size:15px; }
   .final { text-align:center; padding:66px 0 80px; }
   .final h2 { font-size:29px; }
   .cta-row { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:22px; }
   footer { padding:34px 0 46px; border-top:1px solid rgba(245,235,221,.08); color:var(--soft); font-size:13px; }
   footer .wrap { display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; }
   footer a { color:var(--soft); }
+  .disclaimer { margin-top:10px; max-width:600px; opacity:.85; }
   .modal-bg { display:none; position:fixed; inset:0; background:rgba(8,6,4,.78); z-index:50;
     align-items:center; justify-content:center; padding:24px; }
   .modal-bg.on { display:flex; }
@@ -95,13 +100,13 @@
       <div>
         <span class="badge-soon">준비 중</span>
         <p class="kicker">소곤작명</p>
-        <h1>왜 이 이름인지,<br><em>근거</em>를 보여드려요</h1>
-        <p class="lede">소곤작명은 사주를 근거로 이름을 짓고, 지금 이름을 풀이하는 앱입니다. 좋은 이름이라고만 하지 않아요. 어떤 방법으로 왜 이 이름에 닿았는지 근거를 함께 보여드립니다.</p>
+        <h1>왜 그 이름인지,<br><em>근거까지</em> 적어 드려요</h1>
+        <p class="lede">사주 여덟 글자를 읽고, 왜 그 이름인지 근거까지 적어 드리는 작명 앱이에요. 이름을 지어 주는 앱은 많지만, 왜 그 이름인지 말해 주는 앱은 드뭅니다.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap">
           <a class="btn btn-line" href="blog/jakmyeong.html">이름 이야기 읽어보기</a>
         </div>
       </div>
-      <div><img class="char" src="assets/jakmyeong-grandfather.jpg" alt="이름을 짓는 할아버지, 소곤작명의 상담자" loading="eager"></div>
+      <div><img class="char" src="assets/hero-jakmyeong.jpg" alt="한옥 서재에서 작명서를 든 소곤작명의 작명가" loading="eager"></div>
     </div>
   </div>
 
@@ -112,15 +117,15 @@
           <p class="kicker">무엇을 하는 앱인가</p>
           <h2>이름이 필요한<br>모든 순간을 위해</h2>
           <ul>
-            <li><b>이미 태어난 아기</b>의 확정 사주로 이름을 추천하고 방법별 근거를 보여드려요.</li>
-            <li><b>곧 태어날 아기</b>는 예정일 전후 어느 시점에 태어나도 무난한 이름을 찾아드려요.</li>
-            <li><b>개명</b>은 지금 이름 진단부터. 내 이름이 사주와 어떻게 어울리는지 먼저 봅니다.</li>
-            <li><b>예명과 활동명</b>도 활동 목적과 원하는 느낌을 반영해 함께 지어요.</li>
+            <li><b>아기 이름.</b> 태어난 날과 시간으로 짓습니다. 아직 태어나지 않았어도 괜찮아요. 출산 예정일이나 제왕절개 후보 시간으로도 지을 수 있어요.</li>
+            <li><b>예명과 활동명.</b> 성을 빼고 활동명만으로도 지을 수 있습니다. 활동 분야와 원하는 느낌을 고르면 그 결에 맞는 후보를 찾아 드려요.</li>
+            <li><b>이름 풀이.</b><span class="free-chip">무료</span> 이미 있는 이름의 기운과 소리, 획수, 음양을 무료로 봅니다. 개명을 생각 중이라면 지금 이름 진단부터 시작하고, 개명 절차 안내로 이어져요.</li>
+            <li><b>한자 이름과 순한글 이름</b> 모두 지원하고, 돌림자와 출생 순서도 반영할 수 있어요.</li>
           </ul>
         </div>
         <div class="media">
-          <img class="shot" src="assets/shot-jakmyeong-home.jpg" alt="소곤작명 홈 화면 (개발 중)" loading="lazy">
-          <p class="caption">개발 중인 화면이에요. 출시 때는 조금 달라질 수 있어요.</p>
+          <img class="shot" src="assets/jak-screen-home.jpg" alt="소곤작명 홈 화면, 아기 이름과 예명 두 갈래" loading="lazy">
+          <p class="caption">실제 앱 화면이에요. 출시 때 조금 달라질 수 있어요.</p>
         </div>
       </div>
     </div>
@@ -128,9 +133,65 @@
 
   <section class="band">
     <div class="wrap">
-      <p class="kicker">어떻게 짓는가</p>
-      <h2>오행을 보완하는 이름</h2>
-      <p class="sub" style="max-width:660px">사주에서 부족한 기운을 이름이 보태주도록 짓습니다. 한자 자체의 기운을 보는 자원오행과 부르는 소리를 보는 발음오행을 주력으로 하고, 획수는 참고로 봅니다. 한자 이름과 순수 한글 이름, 돌림자까지 다뤄요. 그리고 소곤 시리즈의 약속대로, 같은 입력이면 언제 어디서나 같은 결과가 나옵니다.</p>
+      <div class="row">
+        <div class="media">
+          <img class="shot" src="assets/jak-screen-name-reading.jpg" alt="이름 풀이 결과 화면, 세 축 점수" loading="lazy">
+          <p class="caption">이름 풀이는 무료입니다.</p>
+        </div>
+        <div>
+          <p class="kicker">무료로 시작해요</p>
+          <h2>사주 분석도, 이름 풀이도<br>무료로 먼저 봅니다</h2>
+          <p class="sub">태어난 날과 시간으로 사주 여덟 글자를 세우고, 다섯 기운이 각각 몇 개인지 그대로 보여 드립니다. 무엇이 두텁고 무엇이 얕은지는 세면 나오는 사실이라, 해석을 덧붙이지 않고 숫자를 먼저 보여 드려요.</p>
+          <ul>
+            <li>여덟 글자의 <b>오행 분포</b>를 세어 보여드려요. 여기까지 무료.</li>
+            <li>지금 쓰는 이름의 <b>기운과 소리, 획수, 음양</b>을 풀이해요. 이것도 무료.</li>
+            <li>아이 이름을 이미 정하신 분도, 자기 이름이 궁금한 분도 쓰실 수 있어요.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="row">
+        <div>
+          <p class="kicker">작명서 (作名書)</p>
+          <h2>후보마다,<br>작명가의 말이 붙습니다</h2>
+          <p class="sub">후보마다 이 사주에 왜 맞는지, 어떤 기운을 채우고 무엇이 남는지를 글로 풀어 드립니다. 채우지 못한 부분도 함께 적어요. 좋은 점만 적힌 결과지는 고를 때 도움이 되지 않기 때문입니다.</p>
+          <ul>
+            <li>이름 후보마다 <b>점수와 근거 카드</b>가 붙어요. 사주 여덟 글자, 오행 균형 변화, 부르는 소리, 이름의 쓰임, 획수, 음양.</li>
+            <li><b>같은 이름 다른 한자</b>를 바꿔 보며 점수 차이를 견줄 수 있어요.</li>
+            <li>완성된 작명서는 <b>PDF로 저장하고 공유</b>할 수 있습니다.</li>
+          </ul>
+        </div>
+        <div class="media">
+          <img class="shot" src="assets/jak-screen-namer-letter.jpg" alt="작명가의 말 화면" loading="lazy">
+          <p class="caption">작명가의 말. 한계까지 함께 적습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="row">
+        <div class="media">
+          <img class="shot" src="assets/jak-screen-evidence-cards.jpg" alt="근거 카드 화면" loading="lazy">
+        </div>
+        <div>
+          <p class="kicker">계산을 여는 태도</p>
+          <h2>어떻게 계산하는지<br>전부 열어 둡니다</h2>
+          <ul>
+            <li><b>인명용 한자 안에서만</b> 고릅니다. 출생신고에 쓸 수 없는 글자를 추천하지 않아요.</li>
+            <li>획수는 강희자전 원획으로 세고, 실제로 긋는 획수와 다르면 <b>그 사실도 적습니다.</b></li>
+            <li>작명 자료에 따라 견해가 갈리는 글자는 <b>갈린다고 표시</b>합니다.</li>
+            <li>계산 기준은 앱 안에서 공개하고, <b>세 기준의 비중은 직접 바꿀 수</b> 있어요.</li>
+            <li>같은 정보를 넣으면 <b>언제나 같은 결과</b>가 나옵니다.</li>
+          </ul>
+          <div class="quote">회원가입이 없습니다. 입력한 생년월일시와 이름은 기기 안에서만 계산되고 기기에만 남습니다.</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -147,7 +208,10 @@
 </main>
 <footer>
   <div class="wrap">
-    <div>© Sogon Studio</div>
+    <div>
+      © Sogon Studio
+      <p class="disclaimer">소곤작명의 모든 결과는 전통 성명학 자료를 바탕으로 한 참고 자료입니다. 운세, 성공, 건강 등 어떠한 효과도 보장하지 않으며 이름이 운명을 정하지 않습니다. 이름의 선택과 결정은 부모님과 본인의 몫입니다.</p>
+    </div>
     <div><a href="index.html">홈</a> / <a href="about.html">회사 소개</a></div>
   </div>
 </footer>

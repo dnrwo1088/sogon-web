@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
-<title>소곤신점 - 오방기를 뽑아 무녀에게 물어보는 신점 앱 (준비 중)</title>
-<meta name="description" content="명패를 올리고 오방기 다섯 깃발 중 하나를 뽑으면, 그 깃발과 내 사주를 근거로 무녀가 풀이합니다. 소곤 시리즈의 세 번째 앱, 소곤신점. 출시 준비 중입니다.">
-<meta property="og:title" content="소곤신점 - 뽑기는 한 번, 풀이는 언제 봐도 같습니다">
-<meta property="og:description" content="오방기 다섯 깃발과 내 사주를 근거로 풀이하는 신점 앱. 소곤 시리즈의 세 번째 이야기, 준비 중입니다.">
+<title>소곤신점 - 오방기 다섯 깃발에서 하나를 걷는 신점 앱 (준비 중)</title>
+<meta name="description" content="어둠 속 다섯 깃발에서 하나를 걷습니다. 뽑은 점괘는 언제 다시 봐도 같습니다. 무녀에게 물어보는 신점 앱 소곤신점, 출시 준비 중.">
+<meta property="og:title" content="소곤신점 - 뽑은 점괘는 언제 다시 봐도 같습니다">
+<meta property="og:description" content="어둠 속 다섯 깃발에서 하나를 걷습니다. 무녀에게 물어보는 신점 앱, 출시 준비 중입니다.">
 <meta property="og:image" content="https://sogonstudio.com/assets/sinjeom-mudang.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sogonstudio.com/sogonsinjeom.html">
@@ -36,36 +36,42 @@
   .sub { color:var(--soft); font-size:16px; }
   .badge-soon { display:inline-block; background:rgba(20,16,12,.72); color:var(--soft); border:1px solid rgba(205,194,178,.35);
     font-size:12.5px; font-weight:800; border-radius:999px; padding:5px 14px; margin-bottom:16px; }
+  .free-chip { display:inline-block; background:rgba(216,181,104,.15); color:var(--gold); border:1px solid rgba(216,181,104,.4);
+    font-size:12px; font-weight:800; border-radius:999px; padding:3px 11px; vertical-align:middle; margin-left:6px; }
   .hero { padding:64px 0 54px; }
   .hero .wrap { display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center; }
   .hero h1 { font-size:40px; line-height:1.32; margin-bottom:16px; }
   .hero h1 em { font-style:normal; color:var(--gold); }
-  .lede { color:var(--soft); font-size:17px; margin-bottom:24px; max-width:500px; }
+  .lede { color:var(--soft); font-size:17px; margin-bottom:24px; max-width:520px; }
   .char { width:100%; max-width:400px; border-radius:22px; display:block; margin:0 auto;
     border:1px solid rgba(216,181,104,.25); box-shadow:0 26px 70px rgba(0,0,0,.5); }
   @media (max-width:860px){ .hero .wrap { grid-template-columns:1fr; } .hero h1 { font-size:31px; } }
   section { padding:54px 0; }
   .row { display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:center; }
   @media (max-width:860px){ .row { grid-template-columns:1fr; } .row .media { order:-1; } }
-  .row ol { list-style:none; display:grid; gap:12px; margin-top:18px; counter-reset:step; }
-  .row ol li { padding-left:38px; position:relative; color:var(--soft); font-size:15px; counter-increment:step; }
-  .row ol li::before { content:counter(step); position:absolute; left:0; top:2px; width:26px; height:26px;
-    border-radius:50%; background:rgba(216,181,104,.15); border:1px solid rgba(216,181,104,.4);
-    color:var(--gold); font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; }
+  .row ul { list-style:none; display:grid; gap:12px; margin-top:18px; }
+  .row li { padding-left:26px; position:relative; color:var(--soft); font-size:15px; }
+  .row li::before { content:"✦"; position:absolute; left:0; color:var(--gold); font-size:12px; top:5px; }
   .row li b { color:var(--cream); }
-  .flags { display:flex; gap:10px; margin-top:20px; flex-wrap:wrap; }
-  .flag { flex:1; min-width:88px; text-align:center; border-radius:14px; padding:14px 8px; font-weight:800; font-size:14px; border:1px solid rgba(245,235,221,.14); }
-  .flag small { display:block; font-weight:500; font-size:12px; margin-top:4px; opacity:.85; }
   .shot { width:100%; max-width:290px; border-radius:26px; display:block; margin:0 auto;
     border:1px solid rgba(216,181,104,.28); box-shadow:0 30px 80px rgba(0,0,0,.55); }
   .caption { text-align:center; color:var(--soft); font-size:12.5px; margin-top:10px; }
   .band { background:rgba(10,8,6,.35); border-top:1px solid rgba(245,235,221,.07); border-bottom:1px solid rgba(245,235,221,.07); }
+  .flags { display:flex; gap:12px; margin-top:26px; flex-wrap:wrap; justify-content:center; }
+  .flag { flex:1; min-width:110px; max-width:170px; text-align:center; }
+  .flag img { width:100%; border-radius:14px; border:1px solid rgba(245,235,221,.14); display:block; }
+  .flag b { display:block; margin-top:10px; font-size:15px; }
+  .flag small { display:block; color:var(--soft); font-size:12.5px; margin-top:2px; }
+  .quote { border-left:3px solid var(--gold); background:rgba(10,8,6,.45); border-radius:0 14px 14px 0;
+    padding:16px 20px; margin-top:18px; color:#EDE4D3; font-size:15px; }
+  .quote small { display:block; color:var(--soft); font-size:12.5px; margin-top:6px; }
   .final { text-align:center; padding:66px 0 80px; }
   .final h2 { font-size:29px; }
   .cta-row { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:22px; }
   footer { padding:34px 0 46px; border-top:1px solid rgba(245,235,221,.08); color:var(--soft); font-size:13px; }
   footer .wrap { display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; }
   footer a { color:var(--soft); }
+  .disclaimer { margin-top:10px; max-width:600px; opacity:.85; }
   .modal-bg { display:none; position:fixed; inset:0; background:rgba(8,6,4,.78); z-index:50;
     align-items:center; justify-content:center; padding:24px; }
   .modal-bg.on { display:flex; }
@@ -100,13 +106,13 @@
       <div>
         <span class="badge-soon">준비 중</span>
         <p class="kicker">소곤신점</p>
-        <h1>깃발 하나를 뽑으면,<br><em>당신의 사주로</em> 풀이합니다</h1>
-        <p class="lede">소곤신점은 무녀에게 물어보는 신점 앱입니다. 명패를 올리고, 궁금한 것을 고르고, 오방기 다섯 깃발 중 하나를 뽑으세요. 그 깃발과 당신의 사주를 근거로 무녀가 풀이해 드립니다.</p>
+        <h1>어둠 속 다섯 깃발에서<br><em>하나를 걷습니다</em></h1>
+        <p class="lede">뽑은 점괘는 언제 다시 봐도 같습니다. 소곤신점은 무녀에게 물어보는 신점 앱이에요. 명패를 올리고, 답답한 것을 손님의 말로 적으면, 뽑은 깃발과 사주를 근거로 무녀가 풀이해 드립니다.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap">
           <a class="btn btn-line" href="blog/sinjeom.html">오방기 이야기 읽어보기</a>
         </div>
       </div>
-      <div><img class="char" src="assets/sinjeom-mudang.jpg" alt="촛불 켠 신당의 무녀, 소곤신점의 상담자" loading="eager"></div>
+      <div><img class="char" src="assets/hero-sinjeom.jpg" alt="촛불 켜진 신당의 무녀, 소곤신점의 상담자" loading="eager"></div>
     </div>
   </div>
 
@@ -114,18 +120,18 @@
     <div class="wrap">
       <div class="row">
         <div>
-          <p class="kicker">어떻게 진행되나</p>
-          <h2>신당에 들어가는 네 걸음</h2>
-          <ol>
-            <li><b>명패를 올려요.</b> 이름과 생년월일을 신령님께 올리는 매개로 삼아요. 계산 결과는 화면에 보이지 않습니다.</li>
-            <li><b>궁금한 것을 골라요.</b> 지금 마음에 걸리는 그 일이요.</li>
-            <li><b>오방기 하나를 뽑아요.</b> 청, 적, 황, 백, 흑 다섯 깃발 중 하나.</li>
-            <li><b>무녀의 풀이를 들어요.</b> 뽑은 깃발과 내 사주를 근거로요.</li>
-          </ol>
+          <p class="kicker">신당의 세 가지 문</p>
+          <h2>가볍게 하루를,<br>깊게 여덟 갈래를</h2>
+          <ul>
+            <li><b>오늘의 점괘.</b><span class="free-chip">무료</span> 하루에 한 번, 네 줄짜리 쪽지입니다. 깃발 하나를 걷어 오늘 하루를 받아요. 매일 자정에 다시 열립니다.</li>
+            <li><b>물어보기.</b> 답답한 것을 손님 말로 적으시면 그 물음에 맞춰 풀어 드립니다. 고를 목록이 없어요. 하고 싶은 말을 그대로 적으면 무녀가 먼저 무엇을 물으러 오셨는지 되받아 말합니다.</li>
+            <li><b>종합 결과지.</b> 금전, 연애, 직장, 사업, 인간관계, 가족, 건강, 이사. 여덟 자락이 들보에 걸려 있고 손으로 한 번 쓸면 한꺼번에 걷힙니다.</li>
+            <li>명패는 <b>처음 한 번만</b> 올려요. 그 뒤로는 신당에서 바로 시작합니다.</li>
+          </ul>
         </div>
         <div class="media">
-          <img class="shot" src="assets/shot-sinjeom-home.jpg" alt="소곤신점 신당 화면 (개발 중)" loading="lazy">
-          <p class="caption">개발 중인 화면이에요. 출시 때는 조금 달라질 수 있어요.</p>
+          <img class="shot" src="assets/sin-screen-shrine_home.jpg" alt="소곤신점 신당 홈 화면" loading="lazy">
+          <p class="caption">실제 앱 화면. 맨 아래 고지가 보여요. "이 앱에서 AI는 점을 치지 않습니다"</p>
         </div>
       </div>
     </div>
@@ -134,14 +140,58 @@
   <section class="band">
     <div class="wrap">
       <p class="kicker">오방기</p>
-      <h2>다섯 깃발이 곧 다섯 기운</h2>
-      <p class="sub" style="max-width:660px">같은 깃발을 뽑아도 사람마다 풀이가 다릅니다. 그 기운이 당신 사주에 부족한지 넘치는지에 따라 정반대로 읽히기 때문이에요. 지어낸 게 아니라 계산입니다. 그리고 던진 엽전은 다시 던지지 않아요. 뽑기는 한 번, 풀이는 언제 봐도 같습니다.</p>
+      <h2>다섯 깃발, 다섯 가지 때</h2>
+      <p class="sub" style="max-width:680px">좋은 깃발과 나쁜 깃발이 아닙니다. 다섯 깃발은 전부 지금이 어떤 때인가를 말합니다. 흉하다고 알려진 깃발도 숨기지 않되, 겁주지 않아요.</p>
       <div class="flags">
-        <div class="flag" style="background:rgba(43,80,60,.35);color:#9fd8b0">청<small>나무 木</small></div>
-        <div class="flag" style="background:rgba(120,40,35,.35);color:#f0a08e">적<small>불 火</small></div>
-        <div class="flag" style="background:rgba(130,100,30,.35);color:#e8c878">황<small>흙 土</small></div>
-        <div class="flag" style="background:rgba(120,120,120,.25);color:#e8e4dc">백<small>쇠 金</small></div>
-        <div class="flag" style="background:rgba(20,30,55,.5);color:#9db4d8">흑<small>물 水</small></div>
+        <div class="flag"><img src="assets/flag-cheong.jpg" alt="청기" loading="lazy"><b>청 (나무)</b><small>막힌 일이 움직이는 때</small></div>
+        <div class="flag"><img src="assets/flag-jeok.jpg" alt="적기" loading="lazy"><b>적 (불)</b><small>남 앞에 나설 때</small></div>
+        <div class="flag"><img src="assets/flag-hwang.jpg" alt="황기" loading="lazy"><b>황 (흙)</b><small>내 자리를 지키는 때</small></div>
+        <div class="flag"><img src="assets/flag-baek.jpg" alt="백기" loading="lazy"><b>백 (쇠)</b><small>끌어온 일을 끝내는 때</small></div>
+        <div class="flag"><img src="assets/flag-heuk.jpg" alt="흑기" loading="lazy"><b>흑 (물)</b><small>멈춰 지켜보는 때</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="row">
+        <div>
+          <p class="kicker">뽑기는 한 번</p>
+          <h2>손으로 걷어 내리는<br>그 한 번이 점괘를 정합니다</h2>
+          <p class="sub">질문을 고르고 버튼을 누르는 앱이 아닙니다.</p>
+          <ul>
+            <li>어떤 깃발이 어디 걸려 있는지는 <b>손님이 화면에 손대기 전에 이미 정해져</b> 있습니다.</li>
+            <li><b>다시 뽑기는 이 앱 어디에도 없습니다.</b> 마음에 안 드는 결과가 나와도요.</li>
+            <li>한 번 뽑은 점괘는 <b>언제 다시 열어도 같은 풀이</b>가 나옵니다.</li>
+            <li>뽑기 전에는 색이 안 보여요. 천이 먹빛이라 안 보이는 것입니다.</li>
+          </ul>
+          <div class="quote">여기까지가 깃발이 하는 말입니다. 정하시는 것은 언제나 손님이십니다.<small>무녀가 풀이를 맺을 때 실제로 하는 말</small></div>
+        </div>
+        <div class="media">
+          <img class="shot" src="assets/sin-screen-draw_flags.jpg" alt="들보에 걸린 다섯 깃발, 오방기 뽑기 화면" loading="lazy">
+          <p class="caption">들보에 걸린 다섯 자락. 아직 색이 보이지 않는 순간.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="row">
+        <div class="media">
+          <img class="shot" src="assets/sin-screen-reading_ritual.jpg" alt="뽑힌 깃발과 풀이 화면" loading="lazy">
+        </div>
+        <div>
+          <p class="kicker">이 풀이의 근거</p>
+          <h2>AI는 점을 치지 않습니다</h2>
+          <p class="sub">앱 홈 화면 맨 아래에 실제로 적혀 있는 공식 고지입니다.</p>
+          <ul>
+            <li>점괘를 정하는 것은 <b>손님의 뽑기 한 번</b>뿐입니다.</li>
+            <li>깃발과 오행의 관계 풀이는 <b>사람이 미리 적어 둔 해석표</b>에서 조회됩니다.</li>
+            <li>같은 깃발도 사람마다 풀이가 다른 건, 그 기운이 <b>내 사주에 부족한지 넘치는지</b>에 따라 달리 읽히기 때문이에요.</li>
+            <li><b>이름과 생년월일은 이 기기를 벗어나지 않습니다.</b> 사주 계산은 앱 안에서 이루어져요.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -159,7 +209,10 @@
 </main>
 <footer>
   <div class="wrap">
-    <div>© Sogon Studio</div>
+    <div>
+      © Sogon Studio
+      <p class="disclaimer">모든 풀이는 전통 상징에 기반한 참고 자료입니다. 어떠한 결과도 보장하지 않으며, 의료나 법률, 투자 판단을 대신하지 않습니다. 선택과 결정, 그 결과는 이용자의 몫입니다.</p>
+    </div>
     <div><a href="index.html">홈</a> / <a href="about.html">회사 소개</a></div>
   </div>
 </footer>
