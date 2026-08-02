@@ -16,6 +16,41 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://sogonstudio.com/gunghap.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sogonstudio.com/sogonjakmyeong.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sogonstudio.com/sogonsinjeom.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sogonstudio.com/sogonhaemong.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sogonstudio.com/blog/app-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sogonstudio.com/blog/ttibyeol.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sogonstudio.com/blog/sinnyeon.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sogonstudio.com/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<title>무료 궁합 미리보기 - 두 사람의 기운 흐름 보기 | Sogon Studio</title>
+<meta name="description" content="두 사람의 생년월일만 넣으면 서로의 중심 기운이 어떻게 만나는지 미리 보여드립니다. 회원가입 없는 무료 궁합 테스트, 소곤 시리즈.">
+<meta property="og:title" content="무료 궁합 미리보기 - 두 사람의 기운은 어떻게 만날까">
+<meta property="og:description" content="생년월일 두 개면 충분해요. 서로 살려주는 인연인지, 다듬어주는 인연인지 미리 보기.">
+<meta property="og:image" content="https://sogonstudio.com/assets/og-hero.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sogonstudio.com/gunghap.html">
+<link rel="canonical" href="https://sogonstudio.com/gunghap.html">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root {
+    --ink:#151110; --ink2:#1E1712; --warm:#2B2015;
+    --cream:#F5EBDD; --gold:#D8B568; --soft:#CDC2B2;
+    --line:rgba(216,181,104,.18);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:'Pretendard','Malgun Gothic',-apple-system,sans-serif;
+    background:linear-gradient(180deg,var(--ink) 0%,var(--ink2) 50%,var(--warm) 135%);
+    color:var(--cream); line-height:1.75; min-height:100vh; word-break:keep-all;
+  }
+  .wrap { max-width:680px; margin:0 auto; padding:0 22px 70px; }
+  header { padding:20px 0; border-bottom:1px solid rgba(245,235,221,.08); }
+  header .inner { max-width:680px; margin:0 auto; padding:0 22px; display:flex; justify-content:space-between; align-items:center; }
+  .brand { font-size:19px; font-weight:800; text-decoration:none; color:var(--cream); }
+  .brand small { display:block; font-size:10px; letter-spacing:.16em; color:var(--soft); font-weight:500; }
+  .top-cta { font-size:13px; border:1.5px solid rgba(216,181,104,.5); border-radius:99px; padding:8px 16px; text-decoration:none; color:var(--cream); }
+
+  .kicker { font-size:12px; letter-spacing:.22em; color:var(--gold); font-weight:700; margin:40px 0 10px; }
+  h1 { font-size:31px; line-height:1.35; }
+  .lede { color:var(--soft); font-size:15.5px; margin-top:12px; }
+
+  .tool { background:rgba(10,8,6,.5); border:1px solid var(--line); border-radius:20px; padding:26px; margin-top:28px; }
+  .who { font-size:14px; font-weight:700; color:var(--gold); margin:6px 0 8px; }
+  .who:first-child { margin-top:0; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; }
+  select {
+    flex:1; min-width:88px; background:#221B13; color:var(--cream); font-family:inherit; font-size:16px;
+    border:1px solid rgba(245,235,221,.2); border-radius:12px; padding:12px 14px;
+  }
+  button.go {
+    width:100%; margin-top:18px; background:linear-gradient(135deg,#E7C87E,#C9A24F); color:#241A0C;
+    font-family:inherit; font-weight:800; font-size:17px; border:0; border-radius:99px; padding:15px; cursor:pointer;
+  }
+  button.go:hover { transform:translateY(-1px); }
+
+  .result { display:none; margin-top:26px; }
+  .pair { display:flex; align-items:center; justify-content:center; gap:18px; padding:20px 0 8px; flex-wrap:wrap; }
+  .p { text-align:center; }
+  .p .hanja { font-size:38px; font-weight:800; color:var(--gold); letter-spacing:.06em; }
+  .p .label { font-size:13px; color:var(--soft); margin-top:4px; }
+  .arrow { font-size:22px; color:var(--soft); }
+  .verdict { text-align:center; font-size:20px; font-weight:800; margin-top:10px; }
+  .desc { background:rgba(10,8,6,.45); border:1px solid rgba(245,235,221,.1); border-radius:14px; padding:20px 22px; margin-top:14px; font-size:15px; color:#EDE4D3; }
+  .desc b { color:var(--gold); }
+  .note { color:var(--soft); font-size:13px; margin-top:16px; }
+
+  .cta-box { background:rgba(10,8,6,.5); border:1px solid rgba(216,181,104,.25); border-radius:16px; padding:22px 24px; margin-top:26px; }
+  .cta-box p { font-size:14.5px; color:var(--soft); margin-bottom:14px; }
+  .btn-gold { display:inline-block; background:linear-gradient(135deg,#E7C87E,#C9A24F); color:#241A0C;
+    font-weight:700; border-radius:99px; padding:12px 24px; text-decoration:none; font-size:15px; }
+  a.more { color:var(--gold); font-size:14px; }
+  footer { color:var(--soft); font-size:12px; margin-top:46px; border-top:1px solid rgba(245,235,221,.1); padding-top:18px; }
+</style>
+</head>
+<body>
+<header><div class="inner">
+  <a class="brand" href="index.html">Sogon Studio<small>소곤 시리즈</small></a>
+  <a class="top-cta" href="go.html?c=tool-gunghap-top">앱 다운로드</a>
+</div></header>
+<main class="wrap">
+  <p class="kicker">무료 도구</p>
+  <h1>궁합 미리보기</h1>
+  <p class="lede">두 사람의 생년월일만 넣으면, 각자의 중심 기운이 어떻게 만나는지 미리 보여드려요. 입력한 정보는 어디에도 저장되지 않습니다.</p>
+
+  <div class="tool">
+    <p class="who">나</p>
+    <div class="row">
+      <select id="y1" aria-label="내 출생 연도"></select>
+      <select id="m1" aria-label="내 출생 월"></select>
+      <select id="d1" aria-label="내 출생 일"></select>
+    </div>
+    <p class="who" style="margin-top:18px">상대방</p>
+    <div class="row">
+      <select id="y2" aria-label="상대 출생 연도"></select>
+      <select id="m2" aria-label="상대 출생 월"></select>
+      <select id="d2" aria-label="상대 출생 일"></select>
+    </div>
+    <button class="go" id="calc">두 사람의 기운 보기</button>
+
+    <div class="result" id="result">
+      <div class="pair">
+        <div class="p"><div class="hanja" id="h1"></div><div class="label" id="l1"></div></div>
+        <div class="arrow">✦</div>
+        <div class="p"><div class="hanja" id="h2"></div><div class="label" id="l2"></div></div>
+      </div>
+      <div class="verdict" id="verdict"></div>
+      <div class="desc" id="relDesc"></div>
+      <div class="desc" id="ymDesc"></div>
+      <p class="note">두 사람의 일간, 즉 중심 기운 두 글자만 겹쳐본 미리보기예요. 실제 궁합은 각자 여덟 글자씩, 열여섯 글자가 만나 자리마다 합과 충을 이루며 완성됩니다. 어느 한 흐름이 좋다 나쁘다로 정해져 있지도 않아요.</p>
+    </div>
+  </div>
+
+  <div class="cta-box" id="cta" style="display:none">
+    <p>열여섯 글자가 만나는 전체 궁합이 궁금하다면, 소곤사주가 두 사람의 사주를 나란히 놓고 연애와 결혼, 사업과 동업, 돈과 재물, 가족과 친구까지 근거와 함께 봐드려요. 회원가입 없이 무료 질문 2회.</p>
+    <a class="btn-gold" href="go.html?c=tool-gunghap">소곤사주에서 전체 궁합 보기</a>
+  </div>
+
+  <p style="margin-top:24px"><a class="more" href="blog/gunghap.html">궁합이 실제로 뭘 보는 건지 궁금하다면, 합과 충 이야기 →</a></p>
+
+  <footer>이 도구는 양력 날짜 기준 표준 만세력 공식으로 두 사람의 일간 관계를 봅니다. 소곤 시리즈의 콘텐츠는 참고와 오락 목적입니다. © Sogon Studio</footer>
+</main>
+<script>
+  const STEMS = [
+    ['갑','甲','목',0], ['을','乙','목',1], ['병','丙','화',0], ['정','丁','화',1], ['무','戊','토',0],
+    ['기','己','토',1], ['경','庚','금',0], ['신','辛','금',1], ['임','壬','수',0], ['계','癸','수',1]
+  ];
+  const BRANCHES = ['자','축','인','묘','진','사','오','미','신','유','술','해'];
+  const BRANCH_HANJA = ['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'];
+  const ELEM_IDX = { 목:0, 화:1, 토:2, 금:3, 수:4 };
+  const GEN = [1,2,3,4,0];   // 목생화, 화생토, 토생금, 금생수, 수생목
+  const CTRL = [2,4,1,0,3];  // 목극토, 화극금, 토극수, 금극목, 수극화 (인덱스: 내가 극하는 대상)
+
+  const REL = {
+    same: ['같은 기운으로 나란히 서는 사이',
+      '두 사람의 중심 기운이 같아요. 말하지 않아도 통하는 부분이 많고, 나란히 같은 방향을 보기 좋은 관계예요. 다만 닮은 만큼 부딪힐 때는 똑같은 방식으로 고집을 부리기 쉬워서, 서로 한 발 물러나는 연습이 관계를 오래 가게 합니다.'],
+    iGen: ['내가 상대를 살려주는 흐름',
+      '내 기운이 상대의 기운을 낳고 북돋우는 방향이에요. 내가 마음을 쏟고 챙겨주게 되는 인연이라, 주는 쪽은 뿌듯하면서도 가끔 지칠 수 있어요. 내 몫의 에너지를 남겨두는 것, 그게 이 관계를 건강하게 하는 열쇠입니다.'],
+    theyGen: ['상대가 나를 살려주는 흐름',
+      '상대의 기운이 나를 낳고 북돋우는 방향이에요. 함께 있으면 기대게 되고 힘이 나는 인연입니다. 받는 게 자연스러운 관계지만, 받기만 하면 어느 순간 기울어져요. 고마움을 말로 돌려주는 것만으로도 균형이 잡힙니다.'],
+    iCtrl: ['내가 상대를 이끌고 다듬는 흐름',
+      '내 기운이 상대의 기운을 누르고 다듬는 방향이에요. 관계의 주도권이 내 쪽으로 기울기 쉽고, 내가 이끌면 상대가 따라오는 그림이 자주 나옵니다. 다듬는 손길이 지나치면 상대는 눌린다고 느껴요. 이끌되 묻는 것, 그게 요령입니다.'],
+    theyCtrl: ['상대가 나를 붙잡아주는 흐름',
+      '상대의 기운이 나를 누르고 다듬는 방향이에요. 상대 앞에서는 괜히 긴장되고 잘 보이고 싶어지는 인연입니다. 좋게 흐르면 나를 성장시키는 자극이 되고, 지나치면 눈치를 보게 돼요. 내 목소리를 잃지 않는 게 중요합니다.']
+  };
+
+  function jdn(y, m, d) {
+    const a = Math.floor((14 - m) / 12), yy = y + 4800 - a, mm = m + 12 * a - 3;
+    return d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
+  }
+  function pillar(y, m, d) {
+    const idx = ((jdn(y, m, d) + 49) % 60 + 60) % 60;
+    return { s: STEMS[idx % 10], bIdx: idx % 12 };
+  }
+
+  function setup(n) {
+    const y = document.getElementById('y' + n), m = document.getElementById('m' + n), d = document.getElementById('d' + n);
+    const thisYear = new Date().getFullYear();
+    for (let i = thisYear; i >= 1930; i--) y.add(new Option(i + '년', i));
+    for (let i = 1; i <= 12; i++) m.add(new Option(i + '월', i));
+    const fill = () => {
+      const max = new Date(+y.value, +m.value, 0).getDate(), cur = +d.value || 1;
+      d.innerHTML = '';
+      for (let i = 1; i <= max; i++) d.add(new Option(i + '일', i));
+      d.value = Math.min(cur, max);
+    };
+    y.value = 1995; y.onchange = fill; m.onchange = fill; fill();
+  }
+  setup(1); setup(2);
+
+  document.getElementById('calc').onclick = () => {
+    const a = pillar(+y1.value, +m1.value, +d1.value);
+    const b = pillar(+y2.value, +m2.value, +d2.value);
+    const ea = ELEM_IDX[a.s[2]], eb = ELEM_IDX[b.s[2]];
+    let rel;
+    if (ea === eb) rel = REL.same;
+    else if (GEN[ea] === eb) rel = REL.iGen;
+    else if (GEN[eb] === ea) rel = REL.theyGen;
+    else if (CTRL[ea] === eb) rel = REL.iCtrl;
+    else rel = REL.theyCtrl;
+
+    document.getElementById('h1').textContent = a.s[1] + BRANCH_HANJA[a.bIdx];
+    document.getElementById('l1').textContent = '나: ' + a.s[0] + BRANCHES[a.bIdx] + ' 일주, ' + a.s[2] + '의 기운';
+    document.getElementById('h2').textContent = b.s[1] + BRANCH_HANJA[b.bIdx];
+    document.getElementById('l2').textContent = '상대: ' + b.s[0] + BRANCHES[b.bIdx] + ' 일주, ' + b.s[2] + '의 기운';
+    document.getElementById('verdict').textContent = rel[0];
+    document.getElementById('relDesc').innerHTML = '<b>' + a.s[2] + '(나)와 ' + b.s[2] + '(상대)</b><br>' + rel[1];
+    const sameYm = a.s[3] === b.s[3];
+    document.getElementById('ymDesc').innerHTML = '<b>음양의 결</b><br>' + (sameYm
+      ? '두 사람 다 ' + (a.s[3] === 0 ? '양' : '음') + '의 결이에요. 속도와 온도가 비슷해 편안하지만, 서로 먼저 굽히지 않으려 할 때는 닮은 고집이 마주칠 수 있어요.'
+      : '한 사람은 양, 한 사람은 음의 결이에요. 속도와 온도가 달라 답답할 때도 있지만, 그만큼 서로에게 없는 것을 채워주는 조합입니다.');
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('cta').style.display = 'block';
+  };
+</script>
+</body>
+</html>
