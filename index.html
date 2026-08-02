@@ -58,23 +58,23 @@
   h2 { font-size:30px; line-height:1.35; margin-bottom:10px; }
   .sub { color:var(--soft); font-size:16px; margin-bottom:34px; max-width:660px; }
 
-  .hero { padding:58px 0 20px; text-align:center; position:relative; }
-  .hero h1 { font-size:46px; line-height:1.3; margin-bottom:18px; letter-spacing:-.01em; }
+  .hero { padding:44px 0 8px; text-align:center; position:relative; }
+  .hero h1 { font-size:40px; line-height:1.3; margin-bottom:14px; letter-spacing:-.01em; }
   .hero h1 em { font-style:normal; color:var(--gold); }
   .lede { color:var(--soft); font-size:17px; max-width:560px; margin:0 auto 30px; }
   .cta-row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center; }
   @media (max-width:720px){ .hero h1 { font-size:32px; } }
 
   /* 히어로: 고민 진입 + 무료 도구 */
-  .q-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:34px; text-align:left; }
+  .q-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:24px; text-align:left; }
   @media (max-width:860px){ .q-grid { grid-template-columns:repeat(2,1fr); } }
   @media (max-width:480px){ .q-grid { grid-template-columns:1fr; } }
-  .q-card { background:rgba(10,8,6,.5); border:1px solid rgba(245,235,221,.12); border-radius:16px;
-    padding:20px 20px 18px; text-decoration:none; color:var(--cream); display:block;
+  .q-card { background:rgba(10,8,6,.5); border:1px solid rgba(245,235,221,.12); border-radius:14px;
+    padding:15px 16px 13px; text-decoration:none; color:var(--cream); display:block;
     transition:transform .15s ease, border-color .15s ease, background .15s ease; }
   .q-card:hover { transform:translateY(-3px); border-color:rgba(216,181,104,.5); background:rgba(10,8,6,.7); }
-  .q-card b { display:block; font-size:15.5px; line-height:1.45; letter-spacing:-.01em; }
-  .q-card span { display:block; margin-top:10px; color:var(--gold); font-size:12.5px; font-weight:700; }
+  .q-card b { display:block; font-size:14.5px; line-height:1.4; letter-spacing:-.01em; }
+  .q-card span { display:block; margin-top:8px; color:var(--gold); font-size:12px; font-weight:700; }
 
   .tools { display:flex; gap:12px; justify-content:center; margin-top:18px; flex-wrap:wrap; }
   .tool { display:flex; align-items:center; gap:12px; padding:13px 22px; border-radius:14px;
@@ -114,26 +114,27 @@
     .hline { width:26px; margin-bottom:40px; }
   }
 
-  section { padding:56px 0; }
+  section { padding:46px 0; }
 
-  .series { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
-  @media (max-width:840px){ .series { grid-template-columns:1fr; } }
+  .series { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media (max-width:960px){ .series { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){ .series { grid-template-columns:1fr; } }
   .app-card { background:rgba(10,8,6,.5); border:1px solid var(--line); border-radius:22px;
     overflow:hidden; display:flex; flex-direction:column; transition:transform .15s ease, border-color .15s ease; }
   .app-card:hover { transform:translateY(-3px); border-color:rgba(216,181,104,.45); }
-  .app-card .thumb { position:relative; aspect-ratio:4/3; overflow:hidden; }
-  .app-card .thumb img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
-  .app-card .thumb img.pos-top { object-position:center 18%; }
+  .app-card .thumb { position:relative; aspect-ratio:16/10; overflow:hidden; }
+  .app-card .thumb img { width:100%; height:100%; object-fit:cover; object-position:center 16%; display:block; }
+  .app-card .thumb img.pos-top { object-position:center 12%; }
   .app-card .thumb::after { content:""; position:absolute; inset:0;
     background:linear-gradient(180deg, transparent 55%, rgba(10,8,6,.85) 100%); }
-  .app-card .badge { position:absolute; top:14px; left:14px; z-index:2; font-size:12px; font-weight:800;
-    border-radius:999px; padding:5px 13px; backdrop-filter:blur(4px); }
+  .app-card .badge { position:absolute; top:10px; left:10px; z-index:2; font-size:11px; font-weight:800;
+    border-radius:999px; padding:4px 10px; backdrop-filter:blur(4px); }
   .badge-live { background:rgba(216,181,104,.9); color:#241A0C; }
   .badge-soon { background:rgba(20,16,12,.72); color:var(--soft); border:1px solid rgba(205,194,178,.35); }
-  .app-card .body { padding:20px 24px 24px; display:flex; flex-direction:column; gap:10px; flex:1; }
-  .app-card h3 { font-size:22px; }
-  .app-card h3 small { font-size:13px; color:var(--gold); font-weight:700; margin-left:8px; }
-  .app-card p { color:var(--soft); font-size:14.5px; flex:1; }
+  .app-card .body { padding:15px 16px 16px; display:flex; flex-direction:column; gap:7px; flex:1; }
+  .app-card h3 { font-size:17.5px; }
+  .app-card h3 small { display:block; font-size:11.5px; color:var(--gold); font-weight:700; margin:3px 0 0; }
+  .app-card p { color:var(--soft); font-size:13px; flex:1; line-height:1.6; }
   .app-card .actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:6px; }
   .app-card .actions .btn { padding:11px 12px; font-size:13.5px; text-align:center; cursor:pointer;
     font-family:inherit; }
@@ -268,7 +269,7 @@
     <div class="wrap">
       <p class="kicker">OUR APPS</p>
       <h2>소곤 시리즈</h2>
-      <p class="sub">직접 만들고 직접 운영합니다. 하나씩, 천천히 늘려가고 있어요.</p>
+      <p class="sub" style="margin-bottom:24px">직접 만들고 직접 운영합니다. 하나씩, 천천히 늘려가고 있어요.</p>
       <div class="series">
         <div class="app-card">
           <div class="thumb">
@@ -277,7 +278,7 @@
           </div>
           <div class="body">
             <h3>소곤사주<small>사주 상담</small></h3>
-            <p>내 사주를 근거로 지금의 고민에 답하는 상담 앱. 답변마다 사주표, 오행, 십성, 대운 중 무엇을 보고 그렇게 말했는지 근거 카드가 붙습니다. 궁합과 매일 아침 오늘의 운세까지. Google Play 평점 5.0 ★</p>
+            <p>고민을 물으면 내 사주를 근거로 답합니다. 답변마다 근거 카드가 붙어요. 궁합과 오늘의 운세까지. 평점 5.0 ★</p>
             <div class="actions">
               <a class="btn btn-gold" href="go.html?c=hub-saju">Google Play</a>
               <button class="btn btn-line" data-app="saju-ios">App Store</button>
@@ -292,7 +293,7 @@
           </div>
           <div class="body">
             <h3>소곤작명<small>이름 짓기, 이름 풀이</small></h3>
-            <p>사주 여덟 글자를 읽고, 왜 그 이름인지 근거까지 적어 드리는 작명 앱. 아기 이름과 예명을 짓고, 지금 이름 풀이는 무료로 볼 수 있어요.</p>
+            <p>왜 그 이름인지 근거까지 적어 드려요. 아기 이름과 예명을 짓고, 이름 풀이는 무료.</p>
             <div class="actions">
               <button class="btn btn-gold" data-app="jakmyeong">Google Play</button>
               <button class="btn btn-line" data-app="jakmyeong">App Store</button>
@@ -307,7 +308,7 @@
           </div>
           <div class="body">
             <h3>소곤신점<small>오방기 신점</small></h3>
-            <p>무녀에게 물어보는 신점 앱. 오방기 다섯 깃발 중 하나를 뽑으면, 그 깃발의 오행과 내 사주를 근거로 풀이합니다. 뽑기는 한 번, 풀이는 언제 봐도 같습니다.</p>
+            <p>다섯 깃발에서 하나를 걷습니다. 그 깃발과 내 사주를 근거로 풀이해요. 오늘의 점괘는 매일 무료.</p>
             <div class="actions">
               <button class="btn btn-gold" data-app="sinjeom">Google Play</button>
               <button class="btn btn-line" data-app="sinjeom">App Store</button>
@@ -322,7 +323,7 @@
           </div>
           <div class="body">
             <h3>소곤해몽<small>해몽, 명리해몽</small></h3>
-            <p>상징 하나로 단정하지 않는 꿈풀이 앱. 기억나는 꿈을 함께 정리해 확인한 다음 근거가 보이는 해몽을 들려드립니다. 꿈만 보는 해몽과, 내 사주까지 함께 보는 명리해몽 두 방식으로요.</p>
+            <p>상징 하나로 단정하지 않아요. 기억한 장면을 확인한 뒤 근거가 보이는 풀이를 들려드립니다.</p>
             <div class="actions">
               <button class="btn btn-gold" data-app="haemong">Google Play</button>
               <button class="btn btn-line" data-app="haemong">App Store</button>
