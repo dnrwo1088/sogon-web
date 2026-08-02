@@ -65,8 +65,29 @@
   .cta-row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center; }
   @media (max-width:720px){ .hero h1 { font-size:32px; } }
 
+  /* 히어로: 고민 진입 + 무료 도구 */
+  .q-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:34px; text-align:left; }
+  @media (max-width:860px){ .q-grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:480px){ .q-grid { grid-template-columns:1fr; } }
+  .q-card { background:rgba(10,8,6,.5); border:1px solid rgba(245,235,221,.12); border-radius:16px;
+    padding:20px 20px 18px; text-decoration:none; color:var(--cream); display:block;
+    transition:transform .15s ease, border-color .15s ease, background .15s ease; }
+  .q-card:hover { transform:translateY(-3px); border-color:rgba(216,181,104,.5); background:rgba(10,8,6,.7); }
+  .q-card b { display:block; font-size:15.5px; line-height:1.45; letter-spacing:-.01em; }
+  .q-card span { display:block; margin-top:10px; color:var(--gold); font-size:12.5px; font-weight:700; }
+
+  .tools { display:flex; gap:12px; justify-content:center; margin-top:18px; flex-wrap:wrap; }
+  .tool { display:flex; align-items:center; gap:12px; padding:13px 22px; border-radius:14px;
+    border:1px solid rgba(216,181,104,.45); background:rgba(216,181,104,.07);
+    text-decoration:none; color:var(--cream); transition:background .15s ease, transform .15s ease; }
+  .tool:hover { background:rgba(216,181,104,.16); transform:translateY(-2px); }
+  .tool .free { font-size:10.5px; font-weight:800; color:#241A0C; background:var(--gold);
+    border-radius:999px; padding:3px 9px; }
+  .tool b { font-size:14.5px; }
+  .tool small { display:block; color:var(--soft); font-size:11.5px; margin-top:1px; }
+
   /* 소곤 가족 관계도 */
-  .family { margin:46px auto 0; max-width:660px; display:flex; flex-direction:column; align-items:center; }
+  .family { margin:0 auto; max-width:660px; display:flex; flex-direction:column; align-items:center; }
   .fam-title { font-size:12px; letter-spacing:.2em; color:var(--gold); font-weight:700; margin-bottom:6px; }
   .fam-lede { color:var(--soft); font-size:14.5px; margin-bottom:26px; }
   .gen { display:flex; align-items:flex-start; justify-content:center; }
@@ -220,52 +241,37 @@
   <div class="hero">
     <div class="wrap">
       <p class="kicker">SOGON STUDIO</p>
-      <h1>고민마다,<br><em>조용한 상담자</em>가 있습니다</h1>
-      <p class="lede">말 못 한 마음을 조용히 정리하도록 돕는 앱들이에요. 화려한 예언 대신, 근거를 보여드립니다.</p>
-      <div class="cta-row">
-        <a class="btn btn-gold" href="#series">시리즈 둘러보기</a>
-        <a class="btn btn-line" href="go.html?c=hub-hero">소곤사주 받기</a>
+      <h1>말 못 한 고민,<br><em>조용히</em> 물어보세요</h1>
+      <p class="lede">정해진 운세 문구가 아니라, 지금 그 고민에 대한 답을요. 근거까지 함께 보여드립니다.</p>
+
+      <div class="q-grid">
+        <a class="q-card" href="sogonsaju.html#gomin">
+          <b>다시 연락해도<br>될까요</b>
+          <span>재회 고민 물어보기 →</span>
+        </a>
+        <a class="q-card" href="sogonsaju.html#gomin">
+          <b>지금 회사, 계속<br>다녀도 될까요</b>
+          <span>이직 고민 물어보기 →</span>
+        </a>
+        <a class="q-card" href="sogonsaju.html#gunghap">
+          <b>우리는 잘<br>맞을까요</b>
+          <span>궁합 보러 가기 →</span>
+        </a>
+        <a class="q-card" href="sogonsaju.html#jjokji">
+          <b>오늘은 어떤<br>날일까요</b>
+          <span>오늘의 운세 받기 →</span>
+        </a>
       </div>
 
-      <div class="family">
-        <p class="fam-title">한 가족의 네 가지 이야기</p>
-        <p class="fam-lede">소곤 시리즈의 상담자들은 한 집안 사람입니다. 각자 다른 방식으로 마음을 들어요.</p>
-
-        <a class="node" href="sogonjakmyeong.html">
-          <div class="ring"><img src="assets/hp-jakmyeong.jpg" alt="소곤작명의 작명가" loading="eager"></div>
-          <b>작명가</b>
-          <span class="role">소곤작명</span>
-          <span class="rel">소곤이의 할아버지</span>
+      <div class="tools">
+        <a class="tool" href="iljoo.html">
+          <span class="free">무료</span>
+          <span><b>내 일주 바로 알아보기</b><small>생년월일만 넣으면 바로 나와요</small></span>
         </a>
-
-        <div class="vline"></div>
-
-        <div class="couple">
-          <a class="node" href="sogonhaemong.html">
-            <div class="ring"><img src="assets/hp-haemong.jpg" alt="소곤해몽의 소곤이 아버지" loading="eager"></div>
-            <b>소곤이 아버지</b>
-            <span class="role">소곤해몽</span>
-            <span class="rel">꿈을 듣는 사람</span>
-          </a>
-          <div class="hline"></div>
-          <a class="node" href="sogonsinjeom.html">
-            <div class="ring"><img src="assets/hp-sinjeom.jpg" alt="소곤신점의 무녀" loading="eager"></div>
-            <b>무녀</b>
-            <span class="role">소곤신점</span>
-            <span class="rel">소곤이의 어머니</span>
-          </a>
-        </div>
-
-        <div class="vline"></div>
-
-        <a class="node center" href="sogonsaju.html">
-          <div class="ring"><img src="assets/hp-saju.jpg" alt="소곤사주의 소곤이" loading="eager"></div>
-          <b>소곤이</b>
-          <span class="role">소곤사주</span>
-          <span class="rel">달빛 상담방의 주인</span>
+        <a class="tool" href="gunghap.html">
+          <span class="free">무료</span>
+          <span><b>궁합 미리보기</b><small>두 사람의 기운이 어떻게 만나는지</small></span>
         </a>
-
-        <p class="fam-note">넷 다 같은 약속을 지킵니다. 같은 입력이면 같은 답, 그리고 왜 그런 답인지 근거를 보여드린다는 것.</p>
       </div>
     </div>
   </div>
@@ -334,35 +340,46 @@
   </section>
 
   <section>
-    <div class="wrap">
-      <p class="kicker">어떤 마음이신가요</p>
-      <h2>고민에서 시작하세요</h2>
-      <p class="sub">지금은 소곤사주가 듣고 있습니다. 정해진 운세 문구가 아니라, 그 고민에 대한 답을요.</p>
-      <div class="cards">
-        <a class="card" href="sogonsaju.html#gomin">
-          <div class="who"><img src="assets/avatar-saju.jpg" alt="소곤이"><span>재회 고민, 소곤이가 들어요</span></div>
-          <h3>다시 연락해도 될까요</h3>
-          <p>재회가 고민될 때, 내 사주는 뭐라고 할까요.</p>
-          <span class="go">소곤사주에서 물어보기 →</span>
+    <div class="wrap" style="text-align:center">
+      <p class="kicker">SOGON FAMILY</p>
+      <h2>사실, 이 넷은 한 가족입니다</h2>
+      <p class="sub" style="margin:0 auto 34px">소곤 시리즈의 상담자들은 한 집안 사람이에요. 각자 다른 방식으로 마음을 듣습니다.</p>
+      <div class="family">
+        <a class="node" href="sogonjakmyeong.html">
+          <div class="ring"><img src="assets/hp-jakmyeong.jpg" alt="소곤작명의 작명가" loading="lazy"></div>
+          <b>작명가</b>
+          <span class="role">소곤작명</span>
+          <span class="rel">소곤이의 할아버지</span>
         </a>
-        <a class="card" href="sogonsaju.html#gomin">
-          <div class="who"><img src="assets/avatar-saju.jpg" alt="소곤이"><span>일과 이직, 소곤이가 들어요</span></div>
-          <h3>지금 회사, 계속 다녀도 될까요</h3>
-          <p>이직과 직장 고민을 사주 흐름으로 정리해요.</p>
-          <span class="go">소곤사주에서 물어보기 →</span>
+
+        <div class="vline"></div>
+
+        <div class="couple">
+          <a class="node" href="sogonhaemong.html">
+            <div class="ring"><img src="assets/hp-haemong.jpg" alt="소곤해몽의 소곤이 아버지" loading="lazy"></div>
+            <b>소곤이 아버지</b>
+            <span class="role">소곤해몽</span>
+            <span class="rel">꿈을 듣는 사람</span>
+          </a>
+          <div class="hline"></div>
+          <a class="node" href="sogonsinjeom.html">
+            <div class="ring"><img src="assets/hp-sinjeom.jpg" alt="소곤신점의 무녀" loading="lazy"></div>
+            <b>무녀</b>
+            <span class="role">소곤신점</span>
+            <span class="rel">소곤이의 어머니</span>
+          </a>
+        </div>
+
+        <div class="vline"></div>
+
+        <a class="node center" href="sogonsaju.html">
+          <div class="ring"><img src="assets/hp-saju.jpg" alt="소곤사주의 소곤이" loading="lazy"></div>
+          <b>소곤이</b>
+          <span class="role">소곤사주</span>
+          <span class="rel">달빛 상담방의 주인</span>
         </a>
-        <a class="card" href="sogonsaju.html#gunghap">
-          <div class="who"><img src="assets/avatar-saju.jpg" alt="소곤이"><span>두 사람의 궁합</span></div>
-          <h3>우리는 잘 맞을까요</h3>
-          <p>두 사람의 사주를 나란히 놓고 궁합을 봅니다.</p>
-          <span class="go">궁합 보러 가기 →</span>
-        </a>
-        <a class="card" href="sogonsaju.html#jjokji">
-          <div class="who"><img src="assets/avatar-saju.jpg" alt="소곤이"><span>매일 아침 쪽지</span></div>
-          <h3>오늘은 어떤 날일까요</h3>
-          <p>매일 아침 소곤이의 쪽지로 오늘의 운세를요.</p>
-          <span class="go">쪽지 받으러 가기 →</span>
-        </a>
+
+        <p class="fam-note">넷 다 같은 약속을 지킵니다. 같은 입력이면 같은 답, 그리고 왜 그런 답인지 근거를 보여드린다는 것.</p>
       </div>
     </div>
   </section>
