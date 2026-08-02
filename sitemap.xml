@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dnrwo1088.github.io/sogon-web/</loc>
+    <loc>https://sogonstudio.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://dnrwo1088.github.io/sogon-web/sogonsaju.html</loc>
+    <loc>https://sogonstudio.com/sogonsaju.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dnrwo1088.github.io/sogon-web/about.html</loc>
+    <loc>https://sogonstudio.com/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dnrwo1088.github.io/sogon-web/blog/index.html</loc>
+    <loc>https://sogonstudio.com/blog/index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dnrwo1088.github.io/sogon-web/blog/iljoo.html</loc>
+    <loc>https://sogonstudio.com/blog/iljoo.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dnrwo1088.github.io/sogon-web/blog/jaehoe.html</loc>
+    <loc>https://sogonstudio.com/blog/jaehoe.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dnrwo1088.github.io/sogon-web/blog/gunghap.html</loc>
+    <loc>https://sogonstudio.com/blog/gunghap.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dnrwo1088.github.io/sogon-web/blog/birthtime.html</loc>
+    <loc>https://sogonstudio.com/blog/birthtime.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dnrwo1088.github.io/sogon-web/blog/iljin.html</loc>
+    <loc>https://sogonstudio.com/blog/iljin.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dnrwo1088.github.io/sogon-web/blog/jakmyeong.html</loc>
+    <loc>https://sogonstudio.com/blog/jakmyeong.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dnrwo1088.github.io/sogon-web/blog/sinjeom.html</loc>
+    <loc>https://sogonstudio.com/blog/sinjeom.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dnrwo1088.github.io/sogon-web/blog/haemong.html</loc>
+    <loc>https://sogonstudio.com/blog/haemong.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

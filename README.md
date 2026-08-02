@@ -2,8 +2,8 @@
 
 모바일 앱을 직접 만들고 운영하는 1인 개발 스튜디오입니다. 이 저장소는 자사 앱 소개 웹사이트입니다.
 
-사이트: https://dnrwo1088.github.io/sogon-web/
-회사 소개: https://dnrwo1088.github.io/sogon-web/about.html
+사이트: https://sogonstudio.com/
+회사 소개: https://sogonstudio.com/about.html
 
 ## 앱
 

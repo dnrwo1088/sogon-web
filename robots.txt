@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dnrwo1088.github.io/sogon-web/sitemap.xml
+Sitemap: https://sogonstudio.com/sitemap.xml
