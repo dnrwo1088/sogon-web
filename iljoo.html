@@ -57,6 +57,26 @@
   .desc { background:rgba(10,8,6,.45); border:1px solid rgba(245,235,221,.1); border-radius:14px; padding:20px 22px; margin-top:14px; font-size:15px; color:#EDE4D3; }
   .desc b { color:var(--gold); }
   .note { color:var(--soft); font-size:13px; margin-top:16px; }
+  /* 사주 여덟 칸: 두 칸만 채우고 여섯 칸은 잠긴 상태로 두어 미완성을 보이게 한다 */
+  .chart { margin-top:22px; }
+  .chart-head { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:7px; }
+  .chart-head span { text-align:center; color:var(--soft); font-size:12px; letter-spacing:.05em; }
+  .chart-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+  .cell { aspect-ratio:1/1; display:flex; align-items:center; justify-content:center;
+    border-radius:12px; font-weight:800; }
+  .cell.locked { background:rgba(10,8,6,.4); border:1px dashed rgba(245,235,221,.16);
+    color:rgba(245,235,221,.22); font-size:20px; }
+  .cell.filled { background:linear-gradient(135deg,rgba(216,181,104,.2),rgba(216,181,104,.06));
+    border:1px solid rgba(216,181,104,.5); color:var(--gold); font-size:28px; }
+  .chart-note { color:var(--soft); font-size:13.5px; margin-top:13px; text-align:center; line-height:1.6; }
+  .chart-note b { color:var(--gold); }
+  /* 오늘의 일진과 내 일간의 오행 관계 (매일 다시 올 이유) */
+  .today { background:rgba(216,181,104,.07); border:1px solid rgba(216,181,104,.28);
+    border-radius:14px; padding:18px 20px; margin-top:14px; }
+  .today .cap { color:var(--gold); font-size:12.5px; font-weight:700; letter-spacing:.06em; }
+  .today .line { font-size:15.5px; color:#F1E7D6; margin-top:8px; line-height:1.65; }
+  .today .line b { color:var(--gold); }
+  .today .sub { color:var(--soft); font-size:12.5px; margin-top:9px; line-height:1.55; }
 
   .cta-box { background:rgba(10,8,6,.5); border:1px solid rgba(216,181,104,.25); border-radius:16px; padding:22px 24px; margin-top:26px; }
   .cta-box p { font-size:14.5px; color:var(--soft); margin-bottom:14px; }
@@ -90,14 +110,30 @@
         <div class="hangul" id="rHangul"></div>
         <div class="elem" id="rElem"></div>
       </div>
+      <div class="chart">
+        <div class="chart-head"><span>년</span><span>월</span><span>일</span><span>시</span></div>
+        <div class="chart-grid">
+          <div class="cell locked">?</div>
+          <div class="cell locked">?</div>
+          <div class="cell filled" id="cStem"></div>
+          <div class="cell locked">?</div>
+          <div class="cell locked">?</div>
+          <div class="cell locked">?</div>
+          <div class="cell filled" id="cBranch"></div>
+          <div class="cell locked">?</div>
+        </div>
+        <p class="chart-note">여덟 글자 중 <b>두 글자</b>를 찾았어요.<br>나머지 여섯 글자는 태어난 시간까지 있어야 나옵니다.</p>
+      </div>
+
       <div class="desc" id="rStem"></div>
       <div class="desc" id="rBranch"></div>
-      <p class="note">양력 기준입니다. 밤 11시 이후에 태어난 분은 전통적으로 다음 날 일주로 보기도 해요. 일주는 사주 여덟 글자 중 두 글자로, 전체 풀이는 나머지 여섯 글자와 함께 볼 때 완성됩니다.</p>
+      <div class="today" id="today"></div>
+      <p class="note">양력 기준입니다. 밤 11시 이후에 태어난 분은 전통적으로 다음 날 일주로 보기도 해요.</p>
     </div>
   </div>
 
   <div class="cta-box" id="cta" style="display:none">
-    <p>내 일주가 나머지 여섯 글자와 만나면 어떤 이야기가 될까요. 소곤사주는 내 사주 전체를 계산하고, 지금 고민에 대한 답을 근거와 함께 들려드려요. 회원가입 없이 무료 질문 2회.</p>
+    <p>위에 잠긴 <b>여섯 칸</b>은 태어난 시간까지 넣어야 열립니다. 소곤사주가 여덟 글자를 전부 세우고, 오늘이 나에게 어떤 날인지 그리고 지금 고민에 대한 답을 근거와 함께 들려드려요. 회원가입 없이 무료 질문 2회.</p>
     <a class="btn-gold" href="go.html?c=tool-iljoo">소곤사주에서 전체 사주 보기</a>
   </div>
 
@@ -162,10 +198,48 @@
   ySel.onchange = fillDays; mSel.onchange = fillDays;
   fillDays();
 
+  // 오늘의 일진과 내 일간의 오행 관계
+  // 상생: 목→화→토→금→수→목,  상극: 목→토→수→화→금→목
+  const NEXT = { 목:'화', 화:'토', 토:'금', 금:'수', 수:'목' };   // 생하는 방향
+  const CTRL = { 목:'토', 토:'수', 수:'화', 화:'금', 금:'목' };   // 극하는 방향
+
+  function relation(mine, today) {
+    if (mine === today) return 'same';
+    if (NEXT[today] === mine) return 'fed';      // 오늘이 나를 살린다
+    if (NEXT[mine] === today) return 'feeds';    // 내가 오늘로 흘러나간다
+    if (CTRL[today] === mine) return 'pressed';  // 오늘이 나를 누른다
+    if (CTRL[mine] === today) return 'presses';  // 내가 오늘을 누른다
+    return 'same';
+  }
+
+  const REL_TEXT = {
+    same:    ['오늘의 기운과 내 기운이 <b>같은 결</b>이에요.', '익숙한 흐름이라 평소 하던 방식이 그대로 통하는 자리입니다.'],
+    fed:     ['오늘의 기운이 내 기운을 <b>북돋는</b> 자리예요.', '밖에서 힘이 들어오는 쪽이라 시작하거나 도움을 청하기 수월합니다.'],
+    feeds:   ['내 기운이 오늘 쪽으로 <b>흘러나가는</b> 자리예요.', '베풀고 쓰는 날에 가깝습니다. 무리해서 다 쏟지 않는 편이 좋아요.'],
+    pressed: ['오늘의 기운이 내 기운을 <b>누르는</b> 자리예요.', '급하게 밀어붙이기보다 한 박자 늦추는 편이 낫습니다.'],
+    presses: ['내 기운이 오늘을 <b>누르는</b> 자리예요.', '밀고 나가기엔 힘이 붙지만 부딪힘도 함께 생깁니다.'],
+  };
+
+  function renderToday(myStemIdx) {
+    const now = new Date();
+    const tIdx = ((jdn(now.getFullYear(), now.getMonth() + 1, now.getDate()) + 49) % 60 + 60) % 60;
+    const ts = STEMS[tIdx % 10], tb = BRANCHES[tIdx % 12];
+    const mine = STEMS[myStemIdx][2];
+    const t = REL_TEXT[relation(mine, ts[2])];
+    document.getElementById('today').innerHTML =
+      '<div class="cap">오늘과 나</div>' +
+      '<div class="line">오늘은 <b>' + ts[0] + tb[0] + '일</b>. ' + t[0] + '</div>' +
+      '<div class="sub">' + t[1] + '</div>' +
+      '<div class="sub">여덟 글자 중 <b>일간 하나끼리만</b> 견준 것입니다. 나머지 여섯 글자를 함께 봐야 오늘이 나에게 어떤 날인지 제대로 나옵니다.</div>';
+  }
+
   document.getElementById('calc').onclick = () => {
     const y = +ySel.value, m = +mSel.value, d = +dSel.value;
     const idx = ((jdn(y, m, d) + 49) % 60 + 60) % 60;
     const s = STEMS[idx % 10], b = BRANCHES[idx % 12];
+    renderToday(idx % 10);
+    document.getElementById('cStem').textContent = s[1];
+    document.getElementById('cBranch').textContent = b[1];
     document.getElementById('rHanja').textContent = s[1] + b[1];
     document.getElementById('rHangul').textContent = s[0] + b[0] + ' 일주';
     document.getElementById('rElem').textContent = '일간 ' + s[0] + '(' + s[2] + ', ' + s[3] + ') / 일지 ' + b[0] + '(' + b[2] + ', ' + b[3] + ')';
