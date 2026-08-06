@@ -1,0 +1,39 @@
+# GitHub Pages 배포 (정적 파일 그대로)
+#
+# 왜 Actions 로 옮겼나:
+#   2026-08-06 부터 레거시(Jekyll) 빌드가 내용과 무관하게 계속 실패했다.
+#   ig.html 을 빼도, .nojekyll 을 빼도, 45초 만에도 "Page build failed" 가 났다.
+#   GitHub 이 레거시 빌드를 정리하는 중으로 보여 Actions 배포로 전환한다.
+#
+# 이 사이트는 순수 정적 HTML 이라 빌드 단계가 없다. 저장소를 그대로 올린다.
+
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - id: deployment
+        uses: actions/deploy-pages@v4
