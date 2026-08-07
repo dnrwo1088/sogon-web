@@ -4,84 +4,101 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>소곤사주 - 말 못 한 고민, 조용히 물어보세요</title>
-<meta name="description" content="내 사주를 근거로 지금의 고민에 답합니다. 무료 질문 2회로 시작하세요. 구독 없이 물어볼 때만.">
+<meta name="description" content="내 사주를 근거로 지금의 고민에 답합니다. 무료 질문 2회로 시작하세요.">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
   /*
-   * 인스타 바이오 링크 전용 착지 페이지.
+   * 인스타 바이오 링크 착지 페이지.
    *
-   * 왜 필요한가: 릴스에서 "일주를 무료로 보여준다"고 해놓고 바로 스토어로 던지면
-   * 약속이 깨진다. 그리고 앱이 뭔지도 모르는 사람에게 가격부터 보이면 넘긴다.
-   * 그래서 여기서 한 번 받아서 두 갈래로 나눈다.
+   * 첫 판은 CSS 로 그린 달과 글자만 쌓아서 밋밋했다. 릴스에서 소곤이를 보고 온 사람이
+   * 완전히 다른 곳에 온 것처럼 느낀다. 그래서 릴스와 같은 이미지를 화면 위쪽에 깔아
+   * 같은 세계로 이어지게 한다.
    *
    * 검색 노출은 필요 없다(noindex). 인스타에서 온 사람만 본다.
    */
   :root {
-    --ink:#151110; --ink2:#1E1712; --warm:#2B2015;
-    --cream:#F5EBDD; --gold:#D8B568; --soft:#CDC2B2;
-    --line:rgba(216,181,104,.18);
+    --ink:#0D0A14; --cream:#F5EBDD; --gold:#E4C075; --soft:#C6BAA9;
+    --line:rgba(228,192,117,.16);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
     font-family:'Pretendard','Malgun Gothic',-apple-system,sans-serif;
-    background:linear-gradient(180deg,var(--ink) 0%,var(--ink2) 46%,var(--warm) 120%);
-    color:var(--cream); line-height:1.7; min-height:100vh; word-break:keep-all;
-    display:flex; align-items:center; justify-content:center;
-    padding:44px 22px calc(44px + env(safe-area-inset-bottom));
-  }
-  .wrap { width:100%; max-width:420px; text-align:center; }
-
-  .moon {
-    width:74px; height:74px; margin:0 auto 26px; border-radius:50%;
-    background:radial-gradient(circle at 36% 32%, #F6E6BE 0%, #D8B568 54%, #A9843C 100%);
-    box-shadow:0 0 54px rgba(216,181,104,.32);
+    background:var(--ink); color:var(--cream); line-height:1.7;
+    word-break:keep-all; -webkit-font-smoothing:antialiased;
   }
 
-  .brand { font-size:15px; letter-spacing:.3em; color:var(--gold); font-weight:700; }
-  h1 { font-size:27px; line-height:1.45; margin-top:16px; font-weight:800; }
-  .sub { color:var(--soft); font-size:15px; margin-top:12px; }
+  /* 소곤이. 릴스에서 본 그 장면. */
+  .hero { position:relative; width:100%; aspect-ratio:1/1; overflow:hidden; }
+  .hero img { width:100%; height:100%; object-fit:cover; object-position:center 22%; display:block; }
+  .hero::after {
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg,
+      rgba(13,10,20,.35) 0%, rgba(13,10,20,0) 26%,
+      rgba(13,10,20,.10) 52%, rgba(13,10,20,.82) 84%, var(--ink) 100%);
+  }
+  .hero .cap {
+    position:absolute; left:0; right:0; bottom:20px; z-index:2; text-align:center; padding:0 26px;
+  }
+  .hero .brand {
+    font-size:12.5px; letter-spacing:.36em; color:var(--gold); font-weight:700; margin-bottom:12px;
+  }
+  .hero h1 {
+    font-size:30px; line-height:1.42; font-weight:800;
+    text-shadow:0 3px 26px rgba(0,0,0,.72);
+  }
+
+  .wrap { max-width:420px; margin:0 auto; padding:0 24px calc(46px + env(safe-area-inset-bottom)); }
+  .sub { color:var(--soft); font-size:15.5px; text-align:center; margin-top:14px; }
 
   .btn {
-    display:block; width:100%; margin-top:14px; border-radius:99px;
-    font-family:inherit; font-weight:800; text-decoration:none;
-    padding:17px 20px; font-size:17px; letter-spacing:-.2px;
+    display:block; width:100%; border-radius:99px; text-align:center;
+    font-family:inherit; text-decoration:none; padding:18px 20px; letter-spacing:-.2px;
   }
-  .btn-gold { background:linear-gradient(135deg,#E7C87E,#C9A24F); color:#241A0C;
-    box-shadow:0 14px 34px rgba(216,181,104,.22); }
-  .btn-line { background:transparent; color:var(--cream);
-    border:1.5px solid rgba(245,235,221,.28); font-weight:700; font-size:16px; }
+  .btn-gold {
+    margin-top:26px; background:linear-gradient(135deg,#F3D98F 0%,#E4C075 46%,#C9A34E 100%);
+    color:#211705; font-weight:800; font-size:17.5px;
+    box-shadow:0 16px 38px rgba(228,192,117,.24);
+  }
+  .btn-line {
+    background:transparent; color:var(--cream); font-weight:700; font-size:16px;
+    border:1.5px solid rgba(245,235,221,.26);
+  }
 
-  .primary { margin-top:34px; }
-
-  /* 가격은 버튼 아래. 이미 누를 사람은 안 읽고 누르고, 망설이는 사람만 읽는다. */
-  .price { margin-top:26px; padding-top:24px; border-top:1px solid var(--line); }
-  .price .lead { font-size:17px; font-weight:700; }
+  .price { margin-top:30px; padding-top:26px; border-top:1px solid var(--line); text-align:center; }
+  .price .lead { font-size:18px; font-weight:800; }
   .price .lead b { color:var(--gold); }
-  .price .note { color:var(--soft); font-size:14px; margin-top:7px; }
-  .price .what { color:var(--soft); font-size:14px; margin-top:16px; line-height:1.72; }
+  .price .note { color:var(--soft); font-size:14px; margin-top:8px; }
+  .price .what {
+    margin-top:18px; padding:15px 17px; border-radius:14px;
+    background:rgba(228,192,117,.06); border:1px solid var(--line);
+    color:var(--soft); font-size:14px; line-height:1.72;
+  }
   .price .what b { color:var(--cream); font-weight:600; }
 
-  .second { margin-top:30px; padding-top:26px; border-top:1px solid var(--line); }
-  .second .kicker { color:var(--soft); font-size:14px; margin-bottom:12px; }
-  .second .tiny { color:var(--soft); font-size:12.5px; margin-top:10px; }
+  .second { margin-top:30px; padding-top:26px; border-top:1px solid var(--line); text-align:center; }
+  .second .kicker { color:var(--soft); font-size:14px; margin-bottom:13px; }
+  .second .tiny { color:var(--soft); font-size:12.5px; margin-top:11px; }
 
-  footer { margin-top:34px; color:var(--soft); font-size:11.5px; line-height:1.65; opacity:.8; }
+  footer { margin-top:34px; color:var(--soft); font-size:11.5px; line-height:1.66; opacity:.72; text-align:center; }
   footer a { color:var(--soft); }
 </style>
 </head>
 <body>
+<div class="hero">
+  <img src="assets/sogoni.jpg" alt="달을 든 소곤이" fetchpriority="high">
+  <div class="cap">
+    <p class="brand">소곤사주</p>
+    <h1>말 못 한 고민,<br>조용히 물어보세요</h1>
+  </div>
+</div>
+
 <main class="wrap">
-  <div class="moon" aria-hidden="true"></div>
-  <p class="brand">소곤사주</p>
-  <h1>말 못 한 고민,<br>조용히 물어보세요</h1>
   <p class="sub">내 사주를 근거로 답해 드립니다</p>
 
-  <div class="primary">
-    <a class="btn btn-gold" href="go.html?c=ig-landing&s=instagram">무료 질문 2회로 시작하기</a>
-  </div>
+  <a class="btn btn-gold" href="go.html?c=ig-landing&s=instagram">무료 질문 2회로 시작하기</a>
 
   <div class="price">
     <p class="lead">물어볼 때만 <b>천원</b>입니다</p>
